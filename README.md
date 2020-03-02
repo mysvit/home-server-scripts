@@ -1,8 +1,6 @@
 # home-server
-install sudo and git hub
+install git hub
 su -
-
-apt-get install sudo -y
 
 apt-get install git -y
 
