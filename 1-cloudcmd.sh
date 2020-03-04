@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#LOCATION your-server-ip:8000
+
 apt install curl dirmngr apt-transport-https lsb-release ca-certificates -y
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt install nodejs -y
