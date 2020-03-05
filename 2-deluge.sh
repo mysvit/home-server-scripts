@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# config located /home/deluge/.config/core.conf
 #open deluge web your-server-ip:8112
 # default password = deluge
 # change password, download folder and compleader folder
