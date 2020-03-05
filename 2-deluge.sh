@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#LOCATION your-server-ip:8112
-#default password 
+#open deluge web your-server-ip:8112
+# default password = deluge
+# change password, download folder and compleader folder
 
 apt install deluged deluge-webui -y
 adduser --no-create-home --system --group deluge
