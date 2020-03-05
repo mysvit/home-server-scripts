@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #LOCATION your-server-ip:8112
+#default password 
 
 apt install deluged deluge-webui -y
 adduser --no-create-home --system --group deluge
