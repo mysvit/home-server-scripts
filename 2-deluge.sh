@@ -8,7 +8,7 @@ apt install deluged deluge-webui -y
 adduser --system --group deluge
 
 srv="/etc/systemd/system/deluged.service"
-echo "[Unit]">>$srv
+echo "[Unit]" > $srv
 echo "Description=Deluge Bittorrent Client Daemon">>$srv
 echo "After=network-online.target">>$srv
 echo "[Service]">>$srv
@@ -27,7 +27,7 @@ systemctl start deluged
 
 
 srv="/etc/systemd/system/deluge-web.service"
-echo "[Unit]">>$srv
+echo "[Unit]" > $srv
 echo "Description=Deluge Bittorrent Client Web Interface">>$srv
 echo "After=network-online.target">>$srv
 echo "[Service]">>$srv
