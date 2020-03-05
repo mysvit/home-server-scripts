@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# add user 
+# smbpasswd -a [username]
+
+# see samba user
+# pdbedit -w -L
+
+# systemctl restart smbd
+
 apt update
 apt install samba -y
 
@@ -9,7 +17,3 @@ apt install samba -y
 #read only = no
 #path = /home
 #guest ok = no
-
-# add user 
-# smbpasswd -a [username]
-systemctl restart smbd
