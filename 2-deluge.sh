@@ -5,7 +5,7 @@
 # change password, download folder and compleader folder
 
 apt install deluged deluge-webui -y
-adduser --no-create-home --system --group deluge
+adduser --system --group deluge
 
 srv="/etc/systemd/system/deluged.service"
 echo "[Unit]">>$srv
