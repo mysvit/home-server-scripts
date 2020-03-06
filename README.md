@@ -5,6 +5,6 @@ su -
 
 apt update
 
-apt install git -y
+apt install git -y | apt install zip unzip -y
 
 git clone https://github.com/sv0505/home-server
