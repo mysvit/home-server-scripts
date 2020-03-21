@@ -10,7 +10,7 @@ echo 0 Exit
 echo
 echo Network setup
 echo 11 interfaces
-echo 12 interfaces
+echo 12 hostname
 echo
 echo 2 Mount folders to mnt
 echo 21 backup 
@@ -29,16 +29,18 @@ read SELECT
 case $SELECT in
 
   0)
-    echo -n "0"
+    echo -n "Exit"
     ;;
 
   11)
     echo -n "11"
+    bash network-interfaces
     bash build-server.sh
     ;;
 
   12)
     echo -n "12"
+    bash network-hostname
     bash build-server.sh
     ;;
 
@@ -54,5 +56,6 @@ case $SELECT in
 
   *)
     echo -n "unknown"
+    bash build-server.sh
     ;;
 esac
