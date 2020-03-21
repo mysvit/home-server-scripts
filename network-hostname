@@ -1,0 +1,7 @@
+echo -n "Change hostname"
+
+echo -n "Enter hostname : "
+read host
+
+f="/etc/hostname"
+echo $host > $f
