@@ -5,3 +5,5 @@ read host
 
 f="/etc/hostname"
 echo $host > $f
+
+systemctl status networking
