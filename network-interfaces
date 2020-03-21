@@ -1,0 +1,6 @@
+#setup static ip address
+
+f="/etc/network/interfaces"
+echo "Example">>$f
+echo "# iface enp0s8 inet static">>$f
+echo "# address 192.168.1.10/24">>$f
