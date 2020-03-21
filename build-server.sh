@@ -18,8 +18,11 @@ echo 22 media
 echo
 echo 31 torrent work folders
 
-# 2. 
-
+echo
+echo
+echo
+echo
+echo
 echo -n "Enter number:"
 read SELECT
 
