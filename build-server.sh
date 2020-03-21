@@ -23,7 +23,7 @@ echo
 echo
 echo
 echo
-echo "Enter number:"
+echo -n "Enter number:"
 read SELECT
 
 case $SELECT in
