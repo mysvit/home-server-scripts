@@ -19,10 +19,6 @@ echo
 echo 31 torrent work folders
 
 echo
-echo
-echo
-echo
-echo
 echo -n "Enter number:"
 read SELECT
 
