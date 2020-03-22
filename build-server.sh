@@ -2,12 +2,6 @@
 
 clear 
 
-echo
-echo
-echo
-echo
-echo
-
 echo 0 Exit
 echo
 echo Network setup
