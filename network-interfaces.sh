@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #Setup static ip address
 
 f="/etc/network/interfaces"
@@ -13,4 +14,4 @@ nano $f
 
 echo "wait untill finished [systemctl restart networking] and [ifup eth0]
 
-bash network-restart
+bash network-restart.sh
