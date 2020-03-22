@@ -12,7 +12,7 @@ echo Network setup
 echo 11 interfaces
 echo 12 hostname
 echo
-echo 2 Mount folders to mnt
+echo Mount folders to mnt
 echo 21 backup 
 echo 22 media
 echo
