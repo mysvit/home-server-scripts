@@ -1,6 +1,25 @@
+#!/bin/bash
 
-echo "wait untill finished [systemctl restart networking] and [ifup eth0]
+echo "Wait untill finished [systemctl restart networking] and [ifup *]
 
+# restart network
 systemctl restart networking
-ifup enp0s3
-ifup enp0s8
+
+# up interfaces
+array_i=()
+for iface in $(ifconfig | cut -d ' ' -f1| tr ':' '\n' | awk NF)
+do
+  printf "$iface\n"
+  if [ "$iface" != "lo" ] 
+  then
+    array_test+=("$iface")
+  fi  
+done
+
+for i in "${array_test[@]}"; do 
+  echo "$i"; 
+  ifup $i
+done
+
+echo "Press ENTER to continue"
+read
