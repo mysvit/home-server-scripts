@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+clear
+
 f="/etc/hostname"
 echo $name
 currentHostName=$(cat "$f")
@@ -14,3 +16,6 @@ else
   echo $newHostName > $f
   bash network-restart.sh
 fi
+
+echo "press ENTER to continue"
+read
