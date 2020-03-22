@@ -33,13 +33,11 @@ case $SELECT in
     ;;
 
   11)
-    echo -n "11"
     bash network-interfaces
     bash build-server.sh
     ;;
 
   12)
-    echo -n "12"
     bash network-hostname
     bash build-server.sh
     ;;
