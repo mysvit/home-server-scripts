@@ -1,9 +1,14 @@
-echo -n "Change hostname"
+f="/etc/hostname"
+
+echo "Change hostname"
+
+echo -n "Current hostname:"
+cat $f > host 
+echo
 
 echo -n "Enter hostname : "
 read host
 
-f="/etc/hostname"
 echo $host > $f
 
-systemctl status networking
+bash network-restart
