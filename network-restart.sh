@@ -1,10 +1,5 @@
 #!/bin/bash
 
-echo "Wait untill finished [systemctl restart networking] and [ifup *]"
-
-# restart network
-systemctl restart networking
-
 # up interfaces
 array_i=()
 for iface in $(ip link list | cut -d ' ' -f2| tr ':' '\n' | awk NF)
@@ -16,8 +11,17 @@ do
   fi  
 done
 
+echo -n "Wait untill finished [systemctl restart networking] and [ifup *]"
 for i in "${array_test[@]}"; do 
-  echo "$i"; 
+  echo -n "$i"; 
+done
+echo
+
+# restart network
+systemctl restart networking
+
+for i in "${array_test[@]}"; do 
+  echo "====== $i ======="; 
   ifup $i
 done
 
