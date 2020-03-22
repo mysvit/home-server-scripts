@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
+
+clear 
 
 echo
 echo
