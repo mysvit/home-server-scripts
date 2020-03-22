@@ -12,11 +12,10 @@ read newHostName
 if [ -z "$newHostName" ]
 then
   echo "Used current [$currentHostName]"
+  echo "press ENTER to continue"
+  read
 else
   echo "New hostname [$newHostName]"
   echo $newHostName > $f
   bash network-restart.sh
 fi
-
-echo "press ENTER to continue"
-read
