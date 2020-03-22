@@ -29,12 +29,12 @@ case $SELECT in
     ;;
 
   11)
-    bash network-interfaces
+    bash network-interfaces.sh
     bash build-server.sh
     ;;
 
   12)
-    bash network-hostname
+    bash network-hostname.sh
     bash build-server.sh
     ;;
 
