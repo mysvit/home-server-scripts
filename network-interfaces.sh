@@ -3,8 +3,12 @@
 echo "List all interfaces"
 ip link show
 
-echo "Enter interface what you want add like static : "
+echo
+echo -n "Enter interface what you want add like static or press ENTER to exit : "
 read intStat
+
+if [ -z "$intStat" ]
+then
 
 f="/etc/network/interfaces"
 echo "#Static network"                >>$f
@@ -18,3 +22,7 @@ echo "#dns-nameservers 192.168.1.1"   >>$f
 nano $f
 
 bash network-restart.sh
+
+fi
+
+
