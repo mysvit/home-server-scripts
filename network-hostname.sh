@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
 f="/etc/hostname"
+hostname=$(cat "$f")
 
 echo "Change hostname"
 
-echo -n "Current hostname:"
-cat $f > host 
-echo
-
 echo -n "Enter hostname : "
-read host
+read $hostname
 
-echo $host > $f
+echo $hostname > $f
 
 bash network-restart.sh
