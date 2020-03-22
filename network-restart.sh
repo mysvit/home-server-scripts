@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Wait untill finished [systemctl restart networking] and [ifup *]
+echo "Wait untill finished [systemctl restart networking] and [ifup *]"
 
 # restart network
 systemctl restart networking
