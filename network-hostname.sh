@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 f="/etc/hostname"
 
 echo "Change hostname"
@@ -11,4 +13,4 @@ read host
 
 echo $host > $f
 
-bash network-restart
+bash network-restart.sh
