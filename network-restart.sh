@@ -4,18 +4,17 @@
 array_i=()
 for iface in $(ip link list | cut -d ' ' -f2| tr ':' '\n' | awk NF)
 do
-  printf "$iface\n"
   if [ "$iface" != "lo" ] 
   then
     array_test+=("$iface")
   fi  
 done
 
-echo -n "Wait untill finished [systemctl restart networking] and [ifup *]"
+echo -n "Wait untill finished [systemctl restart networking] and [ifup "
 for i in "${array_test[@]}"; do 
-  echo -n "$i"; 
+  echo -n "$i; "; 
 done
-echo
+echo "]"
 
 # restart network
 systemctl restart networking
