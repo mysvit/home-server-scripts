@@ -13,5 +13,4 @@ nano $f
 
 echo "wait untill finished [systemctl restart networking] and [ifup eth0]
 
-systemctl restart networking
-ifup eth0
+bash network-restart
