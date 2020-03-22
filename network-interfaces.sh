@@ -13,6 +13,4 @@ echo "#dns-nameservers 192.168.1.1"   >>$f
 
 nano $f
 
-echo "wait untill finished [systemctl restart networking] and [ifup eth0]
-
 bash network-restart.sh
