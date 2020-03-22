@@ -5,8 +5,8 @@ clear
 echo 0 Exit
 echo
 echo Network setup
-echo 11 interfaces
-echo 12 hostname
+echo 11 Interfaces
+echo 12 Hostname
 echo
 echo Mount folders to mnt
 echo 21 backup 
