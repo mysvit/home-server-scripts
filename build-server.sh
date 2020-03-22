@@ -5,6 +5,7 @@ clear
 echo 0 Exit
 echo
 echo Network setup
+echo 1  Restart
 echo 11 Interfaces
 echo 12 Hostname
 echo
@@ -22,6 +23,11 @@ case $SELECT in
 
   0)
     echo -n "Exit"
+    ;;
+
+  1)
+    bash network-restart.sh
+    bash build-server.sh
     ;;
 
   11)
