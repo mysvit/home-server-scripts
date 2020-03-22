@@ -24,5 +24,6 @@ for i in "${array_test[@]}"; do
   ifup $i
 done
 
+echo
 echo "Press ENTER to continue"
 read
