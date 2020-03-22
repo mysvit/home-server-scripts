@@ -1,4 +1,4 @@
-echo "Setup static ip address"
+#Setup static ip address
 
 f="/etc/network/interfaces"
 echo "#Static network"                >>$f
@@ -10,6 +10,8 @@ echo "#gateway 192.168.1.1"           >>$f
 echo "#dns-nameservers 192.168.1.1"   >>$f
 
 nano $f
+
+echo "wait untill finished [systemctl restart networking] and [ifup eth0]
 
 systemctl restart networking
 ifup eth0
