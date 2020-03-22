@@ -7,7 +7,7 @@ systemctl restart networking
 
 # up interfaces
 array_i=()
-for iface in $(ifconfig | cut -d ' ' -f1| tr ':' '\n' | awk NF)
+for iface in $(ip link list | cut -d ' ' -f2| tr ':' '\n' | awk NF)
 do
   printf "$iface\n"
   if [ "$iface" != "lo" ] 
