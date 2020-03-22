@@ -7,7 +7,7 @@ echo
 echo -n "Enter interface what you want add like static or press ENTER to exit : "
 read intStat
 
-if [ -z "$intStat" ]
+if [ ! -z "$intStat" ]
 then
 
 f="/etc/network/interfaces"
