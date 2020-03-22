@@ -4,10 +4,10 @@ clear
 
 echo 0 Exit
 echo
-echo Network setup
-echo 1  Restart
-echo 11 Interfaces
-echo 12 Hostname
+echo "Network setup"
+echo "1  Restart"
+echo "11 Interfaces"
+echo "12 Hostname"
 echo
 echo Mount folders to mnt
 echo 21 backup 
