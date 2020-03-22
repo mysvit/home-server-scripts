@@ -1,11 +1,15 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
-#Setup static ip address
+echo "List all interfaces"
+ip link show
+
+echo "Enter interface what you want add like static : "
+read intStat
 
 f="/etc/network/interfaces"
 echo "#Static network"                >>$f
-echo "#allow-hotplug eth0"            >>$f
-echo "#iface eth0 inet static"        >>$f
+echo "#allow-hotplug $intStat"        >>$f
+echo "#iface $intStat inet static"    >>$f
 echo "#address 192.168.1.10"          >>$f
 echo "#netmask 255.255.255.0"         >>$f
 echo "#gateway 192.168.1.1"           >>$f
