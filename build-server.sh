@@ -53,6 +53,6 @@ case $SELECT in
 esac
 
 # run script again simulate goto to begin
-#bash build-server.sh
+bash build-server.sh
 
 fi
