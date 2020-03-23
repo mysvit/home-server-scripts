@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 clear 
 echo "
 0 or Ctrl+C Exit
