@@ -1,7 +1,5 @@
 #!/usr/bin/bash
-
 clear 
-
 echo "
 0 Exit
 
@@ -12,13 +10,11 @@ Network setup
 
 Mount folders to /mnt/*
 2  List usb devices
-"
-echo 21 backup 
-echo 22 media
-echo
-echo 31 torrent work folders
+21 Media folder
+22 Backup folder
 
-echo
+"
+
 echo -n "Enter number:"
 read SELECT
 
