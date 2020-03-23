@@ -18,7 +18,7 @@ Mount folders to /mnt/*
 echo -n "Enter number:"
 read SELECT
 
-if ["$SELECT" == "0"]
+if [[$SELECT -eq 0]]
 then
     echo -n "You exited from script."
 else
