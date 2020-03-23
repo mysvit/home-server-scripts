@@ -23,7 +23,9 @@ echo [$SELECT -eq 0]
 
 if [$SELECT -eq 0]
 then
-    echo -n "You exited from script."
+
+    echo "You exited from script."
+
 else
 
 case $SELECT in
@@ -54,6 +56,6 @@ case $SELECT in
 esac
 
 # run script again simulate goto to begin
-bash build-server.sh
+#bash build-server.sh
 
 fi
