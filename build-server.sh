@@ -20,11 +20,8 @@ read SELECT
 
 echo $SELECT
 
-if [["$SELECT" = "0"]]
-then
-
+if [$SELECT -eq 0]; then
     echo "You exited from script."
-
 else
 
 case $SELECT in
