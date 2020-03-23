@@ -1,6 +1,7 @@
 #!/bin/bash
+clear
 
-# list usb
+# list all devices
 fdisk -l
 
 echo "press ENTER to continue"
