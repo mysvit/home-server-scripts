@@ -2,16 +2,16 @@
 
 clear 
 
-echo 0 Exit
-echo
-echo "Network setup"
-echo "1  Restart"
-echo "11 Interfaces"
-echo "12 Hostname"
-echo
 echo "
-Mount folders to mnt/n
-2  List usb devices/n
+0 Exit
+
+Network setup
+1  Restart
+11 Interfaces
+12 Hostname
+
+Mount folders to /mnt/*
+2  List usb devices
 "
 echo 21 backup 
 echo 22 media
