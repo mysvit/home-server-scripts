@@ -1,8 +1,7 @@
 #!/usr/bin/bash
-
 clear
-
 f="/etc/hostname"
+
 echo $name
 currentHostName=$(cat "$f")
 echo "---=== Change hostname ===---"
