@@ -18,39 +18,39 @@ Mount folders to /mnt/*
 echo -n "Enter number:"
 read SELECT
 
-case $SELECT in
+if [$SELECT == 0]
+then
+    echo -n "You exited from script."
+else
 
-  0)
-    echo -n "Exit"
-    ;;
+case $SELECT in
 
   1)
     bash network-restart.sh
-    bash build-server.sh
     ;;
 
   11)
     bash network-interfaces.sh
-    bash build-server.sh
     ;;
 
   12)
     bash network-hostname.sh
-    bash build-server.sh
     ;;
 
-  21)
-    echo -n "12"
-    bash build-server.sh
+  2)
+    bash mount-list.sh
     ;;
 
   22)
     echo -n "12"
-    bash build-server.sh
     ;;
 
   *)
     echo -n "unknown"
-    bash build-server.sh
     ;;
 esac
+
+# run script again simulate goto to begin
+bash build-server.sh
+
+fi
