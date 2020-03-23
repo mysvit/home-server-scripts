@@ -21,7 +21,7 @@ read SELECT
 echo $SELECT
 echo [$SELECT -eq 0]
 
-if [[$SELECT -eq 0]]
+if [["$SELECT" = "0"]]
 then
 
     echo "You exited from script."
