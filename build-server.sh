@@ -42,7 +42,7 @@ case $SELECT in
     ;;
 
   22)
-    echo -n "12"
+    bash mount-media.sh
     ;;
 
   *)
