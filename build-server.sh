@@ -20,7 +20,7 @@ read SELECT
 
 echo $SELECT
 
-if [ "$SELECT" = "0" ]
+if [ $SELECT -eq 0 ]
 then
     echo "You exited from script."
 else
