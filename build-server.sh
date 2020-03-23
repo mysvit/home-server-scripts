@@ -41,7 +41,7 @@ case $SELECT in
     bash mount-list.sh
     ;;
 
-  22)
+  21)
     bash mount-media.sh
     ;;
 
