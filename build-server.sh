@@ -9,7 +9,10 @@ echo "1  Restart"
 echo "11 Interfaces"
 echo "12 Hostname"
 echo
-echo Mount folders to mnt
+echo "
+Mount folders to mnt/n
+2  List usb devices/n
+"
 echo 21 backup 
 echo 22 media
 echo
