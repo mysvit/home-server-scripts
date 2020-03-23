@@ -18,8 +18,6 @@ Mount folders to /mnt/*
 echo -n "Enter number:"
 read SELECT
 
-echo $SELECT
-
 if [ $SELECT -eq 0 ]
 then
     echo "You exited from script."
