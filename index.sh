@@ -26,23 +26,29 @@ else
 case $SELECT in
 
   1)
+    bash network-my.sh
+    ;;
+  11)
     bash network-restart.sh
     ;;
-
-  11)
+  12)
     bash network-interfaces.sh
     ;;
-
-  12)
+  13)
     bash network-hostname.sh
     ;;
 
   2)
+    bash mount-my.sh
+    ;;
+  21)
     bash mount-list.sh
     ;;
-
-  21)
-    bash mount-media.sh
+  22)
+    bash mount-usb.sh
+    ;;
+  23)
+    bash mount-samba.sh
     ;;
 
   *)
