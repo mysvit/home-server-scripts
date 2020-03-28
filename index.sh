@@ -3,15 +3,15 @@ clear
 echo "
 0 or Ctrl+C Exit
 
-Network setup
-1  Restart
-11 Interfaces
-12 Hostname
+1 Network setup (my server)
+11 Restart network
+12 Interfaces
+13 Hostname
 
-Mount folders to /mnt/*
-2  List usb devices
-21 Media folder
-22 Backup folder
+2 Mount folders to /mnt/* (media, backup, torrent) (my server)
+21 List usb devices
+21 Mount usb
+22 Mount samba folder
 
 "
 
