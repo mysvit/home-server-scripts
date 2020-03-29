@@ -19,7 +19,7 @@ ip link show
 
 echo
 echo "###################################################################"
-cat $myInterface
+printf $myInterface
 echo "###################################################################"
 echo
 echo -n "Do you want to apply you custome interfaces Y/n : "
