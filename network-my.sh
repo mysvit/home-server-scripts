@@ -2,9 +2,9 @@
 f="/etc/network/interfaces"
 
 myInterface="
-source /etc/network/interfaces.d/*    \n
+source /etc/network/interfaces.d/*
 
-auto lo   \n
+auto lo
 iface lo inet loopback
 
 #Static network
@@ -20,7 +20,7 @@ ip link show
 
 echo
 echo "###################################################################"
-printf $myInterface
+echo $myInterface
 echo "###################################################################"
 echo
 echo -n "Do you want to apply you custome interfaces Y/n : "
