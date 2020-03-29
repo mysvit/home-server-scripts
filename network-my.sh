@@ -1,8 +1,7 @@
 #!/usr/bin/bash
 f="/etc/network/interfaces"
 
-myInterface = "
-source /etc/network/interfaces.d/*
+myInterface="source /etc/network/interfaces.d/*
 
 auto lo
 iface lo inet loopback
