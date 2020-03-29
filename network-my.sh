@@ -24,8 +24,12 @@ ip link show
 
 echo
 echo "###################################################################"
-echo "####### Netx linnes will be added to $f #####"
+echo "####### Netx lines will be added to $f ######"
 echo "$myInterface"
+echo "###################################################################"
+echo
+echo "####### Current file contains #####################################"
+cat $f
 echo "###################################################################"
 echo
 echo -n "Do you want to add this to $f Y/n : "
