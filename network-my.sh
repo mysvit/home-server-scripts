@@ -22,10 +22,11 @@ ip link show
 
 echo
 echo "###################################################################"
+echo "####### Netx linnes will be added to $f #####"
 echo "$myInterface"
 echo "###################################################################"
 echo
-echo -n "Do you want to apply you custome interfaces Y/n : "
+echo -n "Do you want to add this to $f Y/n : "
 read yesNo
 
 if [ "$yesNo" == "Y" ] || [ "$yesNo" == "y"  ]
