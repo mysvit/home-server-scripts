@@ -4,6 +4,7 @@ echo "
 0 or Ctrl+C Exit
 
 1 Network setup (my server)
+10 Network restore initial files
 11 Restart network
 12 Interfaces
 13 Hostname
@@ -27,6 +28,9 @@ case $SELECT in
 
   1)
     bash network-my.sh
+    ;;
+  10)
+    bash network-restore.sh
     ;;
   11)
     bash network-restart.sh
