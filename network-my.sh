@@ -1,9 +1,10 @@
 #!/usr/bin/bash
 f="/etc/network/interfaces"
 
-myInterface="source /etc/network/interfaces.d/*
+myInterface="
+source /etc/network/interfaces.d/*    \n
 
-auto lo
+auto lo   \n
 iface lo inet loopback
 
 #Static network
