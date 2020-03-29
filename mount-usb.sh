@@ -3,10 +3,14 @@
 f="/etc/fstab"
 fdisk -l
 
-echo -n "Enter /dev/sdc? what you want to mount to /mnt/media : "
+echo "Enter [/dev/sdc?] what you want to mount to [/mnt/usb?] : "
+echo -n "[/dev/sdc?] : "
 read usbMedia
+echo 
+echo -n "[/mnt/usb?]"
+read usbFolder
 
-echo "mount $usbMedia /mnt/media" >> $f
+echo "mount $usbMedia $usbFolder" >> $f
 nano $f
 
 # startup mount samba share
