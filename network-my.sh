@@ -29,7 +29,7 @@ echo
 echo -n "Do you want to apply you custome interfaces Y/n : "
 read yesNo
 
-if [ "$yesNo" -eq "Y" || "$yesNo" -eq "y"  ]
+if [ "$yesNo" = "Y" || "$yesNo" = "y"  ]
 then
   echo $myInterface > $f
   nano $f
