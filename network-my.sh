@@ -27,7 +27,7 @@ echo "####### Current file contains #####################################"
 cat $f
 echo
 echo "###################################################################"
-echo "####### Netx lines will replace $f #########"
+echo "####### Netx lines will replace $f ###########"
 echo "$myInterface"
 echo "###################################################################"
 echo
