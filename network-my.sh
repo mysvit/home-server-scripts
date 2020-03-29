@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+clear
 f="/etc/network/interfaces"
 
 myInterface="
