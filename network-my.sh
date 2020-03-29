@@ -16,6 +16,7 @@ gateway 192.168.1.1
 dns-nameservers 192.168.1.1"
 
 
+echo "###################################################################"
 echo "List all interfaces : "
 ip link show
 
