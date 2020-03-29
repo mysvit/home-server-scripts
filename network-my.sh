@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 clear
-f="/etc/network/interfaces"
+f-interface="/etc/network/interfaces"
+f-hostname="/etc/hostname"
 
+myHostname="media"
 myInterface="
 source /etc/network/interfaces.d/*
 
@@ -23,22 +25,24 @@ echo "###################################################################"
 echo "List all interfaces : "
 ip link show
 echo
-echo "####### Current file [$f] contains ###########"
-cat $f
+echo "####### Current file [$f-interface] contains ###########"
+cat $f-interface
 echo
 echo "###################################################################"
-echo "####### Netx lines will replace $f ###########"
+echo "####### Netx lines will replace $f-interface ###########"
 echo "$myInterface"
 echo "###################################################################"
 echo
-echo -n "Do you want to add this to $f Y/n : "
+echo "######## Hostname will be [media] #################################"
+echo -n "Do you want to add this to $f-interface Y/n : "
 read yesNo
 
 if [ "$yesNo" == "Y" ] || [ "$yesNo" == "y"  ]
 then
-  echo "$myInterface" > $f
-  nano $f
+  echo "$myHostname" > $f-hostname
+  echo "$myInterface" > $f-interface
+  nano $f-interface
   bash network-restart.sh
 else
-  nano $f
+  nano $f-interface
 fi
