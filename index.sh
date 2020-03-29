@@ -10,8 +10,8 @@ echo "
 
 2 Mount folders to /mnt/* (media, backup, torrent) (my server)
 21 List usb devices
-21 Mount usb
-22 Mount samba folder
+22 Mount usb
+23 Mount samba
 
 "
 
