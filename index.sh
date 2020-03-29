@@ -42,7 +42,7 @@ case $SELECT in
     bash mount-my.sh
     ;;
   21)
-    bash mount-list.sh
+    bash mount-usb-list.sh
     ;;
   22)
     bash mount-usb.sh
