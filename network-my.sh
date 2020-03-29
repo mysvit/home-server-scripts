@@ -33,7 +33,6 @@ read yesNo
 
 if [ "$yesNo" == "Y" ] || [ "$yesNo" == "y"  ]
 then
-  cp $f $f.bak
   echo "$myInterface" > $f
   nano $f
   bash network-restart.sh
