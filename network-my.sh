@@ -30,7 +30,7 @@ read yesNo
 
 if [ "$yesNo" == "Y" ] || [ "$yesNo" == "y"  ]
 then
-  echo $myInterface > $f
+  echo "$myInterface" > $f
   nano $f
   bash network-restart.sh
 else
