@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 f="/etc/network/interfaces"
 
-myInterface="source /etc/network/interfaces.d/* \
+myInterface="source /etc/network/interfaces.d/*
 
-auto lo \
-iface lo inet loopback \
+auto lo
+iface lo inet loopback
 
 #Static network
 allow-hotplug enp0s1
@@ -19,7 +19,7 @@ ip link show
 
 echo
 echo "###################################################################"
-echo $myInterface
+cat $myInterface
 echo "###################################################################"
 echo
 echo -n "Do you want to apply you custome interfaces Y/n : "
