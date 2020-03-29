@@ -22,15 +22,13 @@ dns-nameservers 192.168.1.1 8.8.8.8"
 echo "###################################################################"
 echo "List all interfaces : "
 ip link show
-
-echo
-echo "###################################################################"
-echo "####### Netx lines will be added to $f ######"
-echo "$myInterface"
-echo "###################################################################"
 echo
 echo "####### Current file contains #####################################"
 cat $f
+echo
+echo "###################################################################"
+echo "####### Netx lines will replace $f #########"
+echo "$myInterface"
 echo "###################################################################"
 echo
 echo -n "Do you want to add this to $f Y/n : "
