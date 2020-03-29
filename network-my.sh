@@ -23,7 +23,7 @@ echo "###################################################################"
 echo "List all interfaces : "
 ip link show
 echo
-echo "####### Current file contains #####################################"
+echo "####### Current file [$f] contains ###########"
 cat $f
 echo
 echo "###################################################################"
