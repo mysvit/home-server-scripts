@@ -11,8 +11,8 @@ iface lo inet loopback
 
 # The primary network interface
 #Static network
-allow-hotplug enp0s1
-iface $intStat inet static
+allow-hotplug enp0s8
+iface enp0s8 inet static
 address 192.168.1.10
 netmask 255.255.255.0
 gateway 192.168.1.1
