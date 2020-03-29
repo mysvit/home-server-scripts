@@ -52,11 +52,12 @@ case $SELECT in
     ;;
 
   *)
-    echo -n "unknown"
+    echo "unknown option pres ENTER to restart : "
+    read
     ;;
 esac
 
 # run script again simulate goto to begin
-bash build-server.sh
+bash index.sh
 
 fi
