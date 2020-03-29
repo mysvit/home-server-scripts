@@ -4,9 +4,11 @@ f="/etc/network/interfaces"
 myInterface="
 source /etc/network/interfaces.d/*
 
+# The loopback network interface
 auto lo
 iface lo inet loopback
 
+# The primary network interface
 #Static network
 allow-hotplug enp0s1
 iface $intStat inet static
