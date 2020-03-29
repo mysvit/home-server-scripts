@@ -21,7 +21,7 @@ ip link show
 
 echo
 echo "###################################################################"
-echo $myInterface
+echo "$myInterface"
 echo "###################################################################"
 echo
 echo -n "Do you want to apply you custome interfaces Y/n : "
