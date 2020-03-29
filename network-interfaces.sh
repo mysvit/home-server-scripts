@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+f="/etc/network/interfaces"
 
 echo "List all interfaces"
 ip link show
@@ -9,24 +10,17 @@ read intStat
 
 if [ ! -z "$intStat" ]
 then
-
-f="/etc/network/interfaces"
-echo "#Static network"                >>$f
-echo "#allow-hotplug $intStat"        >>$f
-echo "#iface $intStat inet static"    >>$f
-echo "#address 192.168.1.10"          >>$f
-echo "#netmask 255.255.255.0"         >>$f
-echo "#gateway 192.168.1.1"           >>$f
-echo "#dns-nameservers 192.168.1.1"   >>$f
+  echo "#Static network
+  #allow-hotplug $intStat
+  #iface $intStat inet static
+  #address 192.168.1.10
+  #netmask 255.255.255.0
+  #gateway 192.168.1.1
+  #dns-nameservers 192.168.1.1"   >>$f
 
   nano $f
 
   bash network-restart.sh
-
 else
-
   nano $f
-
 fi
-
-
