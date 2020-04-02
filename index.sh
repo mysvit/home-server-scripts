@@ -14,6 +14,8 @@ echo "
 23 Mount samba
 
 3 Install media server Jellyfin and restore configuration from backup if exist
+
+4 Install torrent client with web interface Deluge
 "
 
 echo -n "Enter number:"
@@ -54,6 +56,10 @@ case $SELECT in
     
   3)
     bash install-jellyfin.sh
+    ;;
+
+  4)
+    bash install-deluge.sh
     ;;
 
   *)
