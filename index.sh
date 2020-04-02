@@ -13,6 +13,7 @@ echo "
 22 Mount usb
 23 Mount samba
 
+3 Install media server Jellyfin and restore configuration from backup if exist
 "
 
 echo -n "Enter number:"
@@ -49,6 +50,10 @@ case $SELECT in
     ;;
   23)
     bash mount-samba.sh
+    ;;
+    
+  3)
+    bash install-jellyfin.sh
     ;;
 
   *)
