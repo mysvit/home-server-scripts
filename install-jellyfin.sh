@@ -11,6 +11,8 @@ apt install jellyfin -y
 #restore from backup
 systemctl stop jellyfin
 
+chown -R jellyfin:jellyfin /mnt/backup/jellyfin/*
+
 unzip -o /mnt/backup/jellyfin/var-lib-jellyfin.zip -d /
 chown -R jellyfin:jellyfin /var/lib/jellyfin/*
 find /var/lib/jellyfin -type d -exec chmod 755 {} \;
