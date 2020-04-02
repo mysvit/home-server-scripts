@@ -24,3 +24,8 @@ find /etc/jellyfin -type d -exec chmod 755 {} \;
 find /etc/jellyfin -type f -exec chmod 644 {} \;
 
 systemctl start jellyfin
+systemctl status jellyfin
+
+echo
+echo "Press ENTER to continue"
+read
