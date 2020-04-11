@@ -1,5 +1,5 @@
 #!/bin/bash
-#clear 
+clear
 echo "
 0 Go back
 
