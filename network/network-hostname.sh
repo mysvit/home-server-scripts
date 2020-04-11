@@ -17,5 +17,5 @@ then
 else
   echo "New hostname [$newHostName]"
   echo $newHostName > $f
-  bash network-restart.sh
+  bash ./network/network-restart.sh
 fi
