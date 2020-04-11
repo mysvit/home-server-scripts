@@ -3,10 +3,7 @@ clear
 echo "
 0 or Ctrl+C Exit
 
-1 Network setup (my server)
-11 Restart network
-12 Interfaces
-13 Hostname
+0 Network
 
 2 Mount folders to /mnt/* (media, backup, torrent) (my server)
 21 List usb devices
@@ -29,16 +26,8 @@ else
 case $SELECT in
 
   1)
-    bash network-my.sh
-    ;;
-  11)
-    bash network-restart.sh
-    ;;
-  12)
-    bash network-interfaces.sh
-    ;;
-  13)
-    bash network-hostname.sh
+    cd ./network
+    bash index.sh
     ;;
 
   2)
