@@ -3,7 +3,7 @@ clear
 echo "
 0 or Ctrl+C Exit
 
-0 Network
+1 Network
 
 2 Mount folders to /mnt/* (media, backup, torrent) (my server)
 21 List usb devices
