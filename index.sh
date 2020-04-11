@@ -26,8 +26,7 @@ else
 case $SELECT in
 
   1)
-    cd ./network
-    bash index.sh
+    bash ./network/index.sh
     ;;
 
   2)
