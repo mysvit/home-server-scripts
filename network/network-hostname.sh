@@ -1,6 +1,7 @@
 #!/usr/bin/bash
-clear
 f="/etc/hostname"
+echo "see /etc/hostname"
+clear
 
 echo $name
 currentHostName=$(cat "$f")
