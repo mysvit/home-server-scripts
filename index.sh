@@ -8,13 +8,8 @@ echo "
 2 Network
 3 Devices
 4 Mount devices (StartUp)
-21 List usb devices
-22 Mount usb
-23 Mount samba
-
-3 Install media server Jellyfin and restore configuration from backup if exist
-
-4 Install torrent client with web interface Deluge
+5 Install media server Jellyfin and restore configuration from backup if exist
+6 Install torrent client with web interface Deluge
 "
 
 echo -n "Enter number:"
@@ -36,14 +31,14 @@ case $SELECT in
     ;;
 
   3)
-    bash ./mount/index.sh
+    bash ./devices/index.sh
     ;;
     
-  3)
-    bash install-jellyfin.sh
+  4)
+    bash ./mount/index.sh
     ;;
 
-  4)
+  5)
     bash install-deluge.sh
     ;;
 
