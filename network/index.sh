@@ -19,13 +19,13 @@ else
 case $SELECT in
 
   1)
-    bash network-restart.sh
+    bash ./network/network-restart.sh
     ;;
   2)
-    bash network-interfaces.sh
+    bash ./network/network-interfaces.sh
     ;;
   3)
-    bash network-hostname.sh
+    bash ./network/network-hostname.sh
     ;;
 
   *)
