@@ -1,5 +1,5 @@
 #!/bin/bash
-clear 
+#clear 
 echo "
 0 Go back
 
@@ -34,7 +34,7 @@ case $SELECT in
     ;;
 esac
 
-# run script again simulate goto to begin
+echo "# run script again simulate goto to begin"
 bash index.sh
 
 fi
