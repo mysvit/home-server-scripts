@@ -13,7 +13,7 @@ read SELECT
 
 if [ $SELECT -eq 0 ]
 then
-    cd ..
+    echo "cd .."
 else
 
 case $SELECT in
@@ -35,6 +35,6 @@ case $SELECT in
 esac
 
 echo "# run script again simulate goto to begin"
-bash index.sh
+bash ./network/index.sh
 
 fi
