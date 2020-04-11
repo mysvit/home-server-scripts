@@ -2,6 +2,8 @@
 f="/etc/network/interfaces"
 
 echo "List all interfaces"
+echo "ip link show"
+
 ip link show
 
 echo
