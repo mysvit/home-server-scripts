@@ -2,6 +2,7 @@
 clear 
 echo "
 0 Go back
+
 1 Restart network
 2 Interfaces
 3 Hostname
