@@ -39,6 +39,10 @@ case $SELECT in
     ;;
 
   5)
+    bash install-jellyfin.sh
+    ;;
+
+  6)
     bash install-deluge.sh
     ;;
 
