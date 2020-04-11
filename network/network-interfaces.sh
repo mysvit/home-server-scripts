@@ -22,7 +22,7 @@ then
 
   nano $f
 
-  bash network-restart.sh
+  bash ./network/network-restart.sh
 else
   nano $f
 fi
