@@ -3,9 +3,11 @@ clear
 echo "
 0 or Ctrl+C Exit
 
-1 Network
+1 My Scripts (mount usb, make work forlders)
 
-2 Mount folders to /mnt/* (media, backup, torrent) (my server)
+2 Network
+3 Devices
+4 Mount devices (StartUp)
 21 List usb devices
 22 Mount usb
 23 Mount samba
@@ -26,20 +28,15 @@ else
 case $SELECT in
 
   1)
-    bash ./network/index.sh
+    bash ./my/index.sh
     ;;
 
   2)
-    bash mount-my.sh
+    bash ./network/index.sh
     ;;
-  21)
-    bash mount-usb-list.sh
-    ;;
-  22)
-    bash mount-usb.sh
-    ;;
-  23)
-    bash mount-samba.sh
+
+  3)
+    bash ./mount/index.sh
     ;;
     
   3)
