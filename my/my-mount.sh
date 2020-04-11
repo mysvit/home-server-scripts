@@ -11,18 +11,6 @@ usb-hdd-500G-1="/dev/sdc2"
 mnt-hdd-500G-1="/mnt/hdd-500G-1"
 mount-500G-1 = "mount $usb-hdd-500G-1 $mnt-hdd-500G-1"
 
-# media, torrent(deluge), backup folders
-d-deluge=$mnt-hdd-500G-1
-sl-deluge="/mnt/deluge"
-d-media="$mnt-hdd-8T-1/media"
-sl-media="/mnt/media"
-d-backup="$mnt-hdd-8T-1/backup"
-sl-backup="/mnt/backup"
-d-backup-jellyfin="$mnt-hdd-8T-1/backup/jellyfin"
-
-echo "List usb devices : "
-fdisk -l
-
 echo
 echo "###################################################################"
 echo "$mounMedia"
@@ -40,10 +28,6 @@ then
   echo $mount-500G-1 >> $f-fstab
   nano $f-fstab
   mount -a
-  mkdir $d-backup-jellyfin
-  ln -s $d-media $sl-media
-  ln -s $d-deluge $sl-deluge
-  ln -s $d-backup $sl-backup
 else 
   nano $f-fstab
 fi
