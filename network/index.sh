@@ -13,7 +13,7 @@ read SELECT
 
 if [ $SELECT -eq 0 ]
 then
-    cd ..
+    # cd ..
 else
 
 case $SELECT in
