@@ -1,5 +1,5 @@
 # home-server
-install git hub and home-server git
+Install git app and get home-server scripts
 
 su -
 
