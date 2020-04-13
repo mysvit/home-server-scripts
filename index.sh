@@ -15,7 +15,7 @@ echo "
 echo -n "Enter number : "
 read COMMAND
 
-[ $COMMAND -ne 1 ] && exit 1
+[ $COMMAND -eq 0 ] && exit
 
 case $COMMAND in
 
