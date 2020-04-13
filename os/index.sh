@@ -2,21 +2,16 @@
 clear
 echo "
 0 Go back
-1 Restart network
-2 Interfaces
-3 Hostname
+
+1 Create Debian 10 usb key with Auto install
 "
 
 echo -n "Enter number:"
-read SELECT
+read CHOICE
 
-if [ $SELECT -eq 0 ]
-then
-    echo "cd .."
-else
+[ $CHOICE -ne 1 ] && exit 1
 
-case $SELECT in
-
+case $CHOICE in
   1)
     bash ./os/os-create-debian-10-usb-key.sh
     ;;
@@ -27,7 +22,4 @@ case $SELECT in
     ;;
 esac
 
-echo "# run script again simulate goto to begin"
 bash ./os/index.sh
-
-fi
