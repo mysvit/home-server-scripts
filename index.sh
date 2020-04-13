@@ -15,40 +15,32 @@ echo "
 echo -n "Enter number : "
 read COMMAND
 
-[ $COMMAND -eq 0 ] && exit
+[ $COMMAND -eq 0 ] &&  "Сame out"  && exit
 
 case $COMMAND in
-
   1)
     bash ./my/index.sh
     ;;
-
   2)
     bash ./network/index.sh
     ;;
-
   3)
     bash ./devices/index.sh
     ;;
-    
   4)
     bash ./mount/index.sh
     ;;
-
   5)
     bash ./app/index.sh
     ;;
-
   6)
     bash ./os/index.sh
     ;;
-
   *)
-    echo "unknown option pres ENTER to restart : "
+    echo "unknown option press any key to restart : "
     read
     ;;
 esac
 
 # run script again simulate goto to begin
 bash index.sh
-
