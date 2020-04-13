@@ -18,9 +18,9 @@ ISO_NAME="${REMOTE_ISO##*/}"
 ANYKEY="Press any key to restart"
 
 ##### INPUT
-===============================================================================
+:===============================================================================
 fdisk -l | grep "Disk /dev"
-===============================================================================
+:===============================================================================
 echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
 echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
 echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
