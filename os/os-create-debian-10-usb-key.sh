@@ -29,19 +29,19 @@ echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          
 echo "==============================================================================="
 echo -n "Enter usb key device from list (/dev/sdb for example) : "
 read DISK
-[ -z ${DISK} ] && echo "Please provide root password." && echo $ANYKEY && exit
+[ -z ${DISK} ] && echo "Please provide root password." && echo $ANYKEY && read && exit
 
 echo -n "Enter root password : "
 read ROOT_PWD
-[ -z ${ROOT_PWD} ] && echo "Please provide root password." && echo $ANYKEY && exit
+[ -z ${ROOT_PWD} ] && echo "Please provide root password." && echo $ANYKEY && read && exit
 
 echo -n enter username for SSH session:
 read USER
-[ -z ${USER} ] && echo "Please provide username."  && echo $ANYKEY && exit
+[ -z ${USER} ] && echo "Please provide username."  && echo $ANYKEY && read && exit
 
 echo -n enter user password for SSH session:
 read USER_PWD
-[ -z ${USER_PWD} ] && echo "Please provide user password."  && echo $ANYKEY && exit
+[ -z ${USER_PWD} ] && echo "Please provide user password."  && echo $ANYKEY && read && exit
 
 ##### ACTION
 
