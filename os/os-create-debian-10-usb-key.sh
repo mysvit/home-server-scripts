@@ -20,8 +20,14 @@ ISO_NAME="${REMOTE_ISO##*/}"
 ANYKEY="Press any key to restart"
 
 ##### INPUT
-
-echo -n "Enter usb key device for example /dev/sdb : "
+echo "==============================================================================="
+fdisk -l | grep "Disk /dev"
+echo "==============================================================================="
+echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
+echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
+echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
+echo "==============================================================================="
+echo -n "Enter usb key device from list (/dev/sdb for example) : "
 read DISK
 [ -z ${DISK} ] && echo "Please provide root password." && echo $ANYKEY && exit
 
