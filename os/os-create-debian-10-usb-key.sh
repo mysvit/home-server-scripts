@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e -x -o pipefail
 
 apt update
 apt install -y rsync
@@ -6,14 +7,6 @@ apt install -y wget
 
 CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 echo ${CURRENT_DATE}
-echo -n enter root password:
-read ROOT_PWD
-echo -n enter username for SSH session:
-read USER
-echo -n enter user password for SSH session:
-read USER_PWD
-
-set -e -x -o pipefail
 
 DIRNAME="$(dirname $0)"
 
@@ -24,6 +17,21 @@ DISK="$1"
 : "${ARCH:=amd64}"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
+
+echo -n enter root password:
+read ROOT_PWD
+[ $ROOT_PWD = '' ] && echo "Please provide root password." && exit 1
+
+echo -n enter username for SSH session:
+read USER
+[ $USER = '' ] && echo "Please provide username." && exit 1
+
+echo -n enter user password for SSH session:
+read USER_PWD
+[ $USER_PWD = '' ] && echo "Please provide user password." && exit 1
+
+
+
 
 usage() {
   cat << EOF
