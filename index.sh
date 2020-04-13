@@ -43,7 +43,7 @@ case $SELECT in
     ;;
 
   6)
-    bash ./server/index.sh
+    bash ./os/index.sh
     ;;
 
   *)
