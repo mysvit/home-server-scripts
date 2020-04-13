@@ -17,7 +17,7 @@ case $CHOICE in
     ;;
 
   *)
-    echo "unknown option pres ENTER to restart : "
+    echo "unknown option pres ENTER to restart"
     read
     ;;
 esac
