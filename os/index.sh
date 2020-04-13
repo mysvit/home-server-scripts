@@ -6,7 +6,7 @@ echo "
 1 Create Debian 10 usb key with Auto install
 "
 
-echo -n "Enter number:"
+echo -n "Enter number : "
 read CHOICE
 
 [ $CHOICE -ne 1 ] && exit 1
