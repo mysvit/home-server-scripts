@@ -7,11 +7,11 @@ echo "
 "
 
 echo -n "Enter number : "
-read CHOICE
+read COMMAND
 
-[ $CHOICE -ne 1 ] && exit 1
+[ $COMMAND -ne 1 ] && exit 1
 
-case $CHOICE in
+case $COMMAND in
   1)
     bash ./os/os-create-debian-10-usb-key.sh
     ;;
