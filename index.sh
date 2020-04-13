@@ -12,15 +12,12 @@ echo "
 6 Install server on USB
 "
 
-echo -n "Enter number:"
-read SELECT
+echo -n "Enter number : "
+read COMMAND
 
-if [ $SELECT -eq 0 ]
-then
-    echo "You exited from script."
-else
+[ $COMMAND -ne 1 ] && exit 1
 
-case $SELECT in
+case $COMMAND in
 
   1)
     bash ./my/index.sh
@@ -55,4 +52,3 @@ esac
 # run script again simulate goto to begin
 bash index.sh
 
-fi
