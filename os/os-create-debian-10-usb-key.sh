@@ -10,7 +10,6 @@ echo ${CURRENT_DATE}
 
 DIRNAME="$(dirname $0)"
 
-DISK="$1"
 : "${DEBIAN_RELEASE:=buster}"
 : "${DEBIAN_VERSION:=10.3.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
@@ -18,68 +17,55 @@ DISK="$1"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
 
-echo -n enter root password:
+ANYKEY="Press any key to restart"
+
+##### INPUT
+
+echo -n "Enter usb key device for example /dev/sdb : "
+read DISK
+[ -z ${DISK} ] && echo "Please provide root password." && echo $ANYKEY && exit
+
+echo -n "Enter root password : "
 read ROOT_PWD
-[ $ROOT_PWD = '' ] && echo "Please provide root password." && exit 1
+[ -z ${ROOT_PWD} ] && echo "Please provide root password." && echo $ANYKEY && exit
 
 echo -n enter username for SSH session:
 read USER
-[ $USER = '' ] && echo "Please provide username." && exit 1
+[ -z ${USER} ] && echo "Please provide username."  && echo $ANYKEY && exit
 
 echo -n enter user password for SSH session:
 read USER_PWD
-[ $USER_PWD = '' ] && echo "Please provide user password." && exit 1
+[ -z ${USER_PWD} ] && echo "Please provide user password."  && echo $ANYKEY && exit
 
+##### ACTION
 
-
-
-usage() {
-  cat << EOF
-Usage: $0 <disk> <iso>
-
-disk     Disk to use (e.g. /dev/sdc) - will be wiped out
-
-example : create-debian-usb-key.sh /dev/sdc [iso file optional]
-
-Overriding options via environment variables
-DEBIAN_RELEASE  Release of Debian (default: buster)
-DEBIAN_VERSION  VERSION of Debian (default: 10.3.0)
-DEBIAN_MIRROR   Debian mirror (default: http://ftp.debian.org)
-ARCH            Architecture (default: amd64)
-EOF
-}
-
-[ $# -ne 1 ]     && echo "Please provide required args" && usage && exit 1
-[ -z "${DISK}" ] && echo "Please provide a disk"        && usage && exit 1
-
-PART="${DISK}1"
-
-echo "Getting ISO"
+echo "----- Getting ISO"
 wget --continue -O "${DIRNAME}/${ISO_NAME}" "${REMOTE_ISO}"
 ISO="${DIRNAME}/${ISO_NAME}"
 
-echo "Wiping out beginning of ${DISK}"
+echo "----- Wiping out beginning of ${DISK}"
 dd if=/dev/zero of="${DISK}" bs=10M count=5
 
-echo "Preparing disk partitions"
+echo "----- Preparing disk partitions"
 (echo n; echo p; echo 1; echo ; echo ; echo w) | fdisk "${DISK}"
 partx -u "${DISK}"
 
-echo "Creating a filesystem on ${PART}"
+PART="${DISK}1"
+echo "----- Creating a filesystem on ${PART}"
 mkfs.ext2 "${PART}"
 
 mkdir -p /mnt/usb
 mount "${PART}" /mnt/usb
 grub-install --root-directory=/mnt/usb "${DISK}"
 
-echo "Download the initrd image"
+echo "----- Download the initrd image"
 mkdir "/mnt/usb/hdmedia-${DEBIAN_RELEASE}"
 wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/vmlinuz"   "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/vmlinuz"
 wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/initrd.gz" "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/initrd.gz"
 mkdir -p /mnt/usb/isos
 rsync -aP "${ISO}" /mnt/usb/isos
 
-echo "Create grub config file"
+echo "----- Create grub config file"
 cat << EOF > /mnt/usb/boot/grub/grub.cfg
 set hdmedia="/hdmedia-${DEBIAN_RELEASE}"
 set preseed="/hd-media/preseed"
@@ -95,6 +81,8 @@ menuentry "Debian ${DEBIAN_RELEASE} ${ARCH} MANUAL install (HOME MEDIA SERVER) $
   initrd \$hdmedia/initrd.gz
 }
 EOF
+
+echo "----- Create preseed config file"
 
 mkdir /mnt/usb/preseed
 cat << EOF > /mnt/usb/preseed/debian.preseed
@@ -190,3 +178,5 @@ EOF
 
 sync
 umount /mnt/usb
+
+echo "Finished successfully!"
