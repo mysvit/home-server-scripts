@@ -6,8 +6,6 @@ apt install -y rsync
 apt install -y wget
 
 CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
-echo ${CURRENT_DATE}
-
 DIRNAME="$(dirname $0)"
 
 : "${DEBIAN_RELEASE:=buster}"
@@ -20,9 +18,9 @@ ISO_NAME="${REMOTE_ISO##*/}"
 ANYKEY="Press any key to restart"
 
 ##### INPUT
-echo "==============================================================================="
+===============================================================================
 fdisk -l | grep "Disk /dev"
-echo "==============================================================================="
+===============================================================================
 echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
 echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
 echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
