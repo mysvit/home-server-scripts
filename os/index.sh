@@ -3,13 +3,12 @@ clear
 echo "
 0 Go back
 
-1 Create Debian 10 usb key with Auto install
+1 Create Debian Server 10 usb key with auto install
 "
 
 echo -n "Enter number : "
 read COMMAND
-
-[ $COMMAND -ne 1 ] && exit 1
+[ $COMMAND -ne 1 ] && exit
 
 case $COMMAND in
   1)
