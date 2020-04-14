@@ -57,7 +57,7 @@ partx -u "${DISK}"
 
 #----- Creating a filesystem on ${PART}
 PART="${DISK}1"
-mkfs.ext2 "${PART}"
+mkfs.fat -F32 "${PART}"
 
 #----- mount usb
 mkdir -p ${MNT_USB}
