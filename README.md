@@ -4,8 +4,10 @@ Debian Server 10
 
 Install git app and get home-server-scripts scripts and run index.sh
 
-run unde root
-su -
+run unde root\
+su - \
+or  \
+sudo
 
 apt update;\
 apt install -y git;\
