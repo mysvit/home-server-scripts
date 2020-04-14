@@ -39,7 +39,7 @@ echo -n "Enter user password for SSH session : "
 read USER_PWD
 [ -z ${USER_PWD} ] && echo "Please provide user password." && exit
 
-l="================================================================================"
+echo "================================================================================"
 
 ##### ACTION
 set -e -x -o pipefail
