@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e -x -o pipefail
 
 apt update
 apt install -y rsync
@@ -16,30 +15,31 @@ DIRNAME="$(dirname $0)"
 ISO_NAME="${REMOTE_ISO##*/}"
 
 ##### INPUT
-: "${v:================================================================================}"
+echo "================================================================================"
 fdisk -l | grep "Disk /dev"
-: "${v:================================================================================}"
-: "${v:====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB     =====}"
-: "${v:====                   FOR SEFATY PERPUSE DISCONECT THEM.                  =====}"
-: "${v:====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE           =====}"
-: "${v:================================================================================}"
-: "${v:=Enter usb key device from list (/dev/sdb for example) : }"
+echo "================================================================================"
+echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB     ====="
+echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                  ====="
+echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE           ====="
+echo "================================================================================"
+echo -n "Enter usb key device from list (/dev/sdb for example) : "
 read DISK
-[ -z ${DISK} ] && l="Please provide root password." && exit
+[ -z ${DISK} ] && echo "Please provide root password." && exit
 
-l="Enter root password : "
+echo -n "Enter root password : "
 read ROOT_PWD
 [ -z ${ROOT_PWD} ] && echo "Please provide root password." && exit
 
-l="Enter username for SSH session : "
+echo -n "Enter username for SSH session : "
 read USER
 [ -z ${USER} ] && echo "Please provide username." && exit
 
-l="Enter user password for SSH session : "
+echo -n ="Enter user password for SSH session : "
 read USER_PWD
 [ -z ${USER_PWD} ] && echo "Please provide user password." && exit
 
 ##### ACTION
+set -e -x -o pipefail
 
 l="----- Getting ISO"
 wget --continue -O "${DIRNAME}/${ISO_NAME}" "${REMOTE_ISO}"
