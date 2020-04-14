@@ -15,61 +15,59 @@ DIRNAME="$(dirname $0)"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
 
-ANYKEY="Press any key to restart"
-
 ##### INPUT
-:===============================================================================
+l="==============================================================================="
 fdisk -l | grep "Disk /dev"
-:===============================================================================
-echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
-echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
-echo "====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
-echo "==============================================================================="
-echo -n "Enter usb key device from list (/dev/sdb for example) : "
+l="==============================================================================="
+l="====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
+l="====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
+l="====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
+l="==============================================================================="
+l="Enter usb key device from list (/dev/sdb for example) : "
 read DISK
-[ -z ${DISK} ] && echo "Please provide root password." && echo $ANYKEY && read && exit
+[ -z ${DISK} ] && l="Please provide root password." && exit
 
-echo -n "Enter root password : "
+l="Enter root password : "
 read ROOT_PWD
-[ -z ${ROOT_PWD} ] && echo "Please provide root password." && echo $ANYKEY && read && exit
+[ -z ${ROOT_PWD} ] && echo "Please provide root password." && exit
 
-echo -n enter username for SSH session:
+l="Enter username for SSH session : "
 read USER
-[ -z ${USER} ] && echo "Please provide username."  && echo $ANYKEY && read && exit
+[ -z ${USER} ] && echo "Please provide username." && exit
 
-echo -n enter user password for SSH session:
+l="Enter user password for SSH session : "
 read USER_PWD
-[ -z ${USER_PWD} ] && echo "Please provide user password."  && echo $ANYKEY && read && exit
+[ -z ${USER_PWD} ] && echo "Please provide user password." && exit
 
 ##### ACTION
 
-echo "----- Getting ISO"
+l="----- Getting ISO"
 wget --continue -O "${DIRNAME}/${ISO_NAME}" "${REMOTE_ISO}"
 ISO="${DIRNAME}/${ISO_NAME}"
 
-echo "----- Wiping out beginning of ${DISK}"
+l="----- Wiping out beginning of ${DISK}"
 dd if=/dev/zero of="${DISK}" bs=10M count=5
 
-echo "----- Preparing disk partitions"
+l="----- Preparing disk partitions"
 (echo n; echo p; echo 1; echo ; echo ; echo w) | fdisk "${DISK}"
 partx -u "${DISK}"
 
 PART="${DISK}1"
-echo "----- Creating a filesystem on ${PART}"
+l="----- Creating a filesystem on ${PART}"
 mkfs.ext2 "${PART}"
 
 mkdir -p /mnt/usb
 mount "${PART}" /mnt/usb
 grub-install --root-directory=/mnt/usb "${DISK}"
 
-echo "----- Download the initrd image"
+l="----- Download the initrd image"
 mkdir "/mnt/usb/hdmedia-${DEBIAN_RELEASE}"
 wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/vmlinuz"   "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/vmlinuz"
 wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/initrd.gz" "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/initrd.gz"
 mkdir -p /mnt/usb/isos
 rsync -aP "${ISO}" /mnt/usb/isos
 
-echo "----- Create grub config file"
+l="----- Create grub config file"
 cat << EOF > /mnt/usb/boot/grub/grub.cfg
 set hdmedia="/hdmedia-${DEBIAN_RELEASE}"
 set preseed="/hd-media/preseed"
@@ -86,7 +84,7 @@ menuentry "Debian ${DEBIAN_RELEASE} ${ARCH} MANUAL install (HOME MEDIA SERVER) $
 }
 EOF
 
-echo "----- Create preseed config file"
+l="----- Create preseed config file"
 
 mkdir /mnt/usb/preseed
 cat << EOF > /mnt/usb/preseed/debian.preseed
@@ -183,4 +181,4 @@ EOF
 sync
 umount /mnt/usb
 
-echo "Finished successfully!"
+l="Finished successfully!"
