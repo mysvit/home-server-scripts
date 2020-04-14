@@ -21,6 +21,6 @@ case $COMMAND in
     ;;
 esac
 
-echo "Script finished. Press any key to continue : "
+echo -n "Script finished. Press any key to continue : "
 read
 bash ./os/index.sh
