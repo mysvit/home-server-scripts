@@ -39,6 +39,8 @@ echo -n "Enter user password for SSH session : "
 read USER_PWD
 [ -z ${USER_PWD} ] && echo "Please provide user password." && exit
 
+l="================================================================================"
+
 ##### ACTION
 set -e -x -o pipefail
 
@@ -183,4 +185,4 @@ EOF
 sync
 umount ${MNT_USB}
 
-echo "=============   Finished successfully!  ================"
+l="=============____Finished__successfully!___================"
