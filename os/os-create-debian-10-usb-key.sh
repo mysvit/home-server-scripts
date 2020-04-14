@@ -3,6 +3,7 @@
 apt update
 apt install -y rsync
 apt install -y wget
+apt install -y dosfstools
 
 CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 DIRNAME="$(dirname $0)"
@@ -57,7 +58,7 @@ partx -u "${DISK}"
 
 #----- Creating a filesystem on ${PART}
 PART="${DISK}1"
-mkfs.fat -F32 "${PART}"
+mkfs.vfat -F32 "${PART}"
 
 #----- mount usb
 mkdir -p ${MNT_USB}
