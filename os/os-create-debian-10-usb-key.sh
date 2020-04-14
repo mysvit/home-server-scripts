@@ -13,6 +13,7 @@ DIRNAME="$(dirname $0)"
 : "${ARCH:=amd64}"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
+MNT_USB="/mnt/usb_key_${DEBIAN_RELEASE}"
 
 ##### INPUT
 echo "================================================================================"
@@ -34,41 +35,42 @@ echo -n "Enter username for SSH session : "
 read USER
 [ -z ${USER} ] && echo "Please provide username." && exit
 
-echo -n ="Enter user password for SSH session : "
+echo -n "Enter user password for SSH session : "
 read USER_PWD
 [ -z ${USER_PWD} ] && echo "Please provide user password." && exit
 
 ##### ACTION
 set -e -x -o pipefail
 
-l="----- Getting ISO"
+#----- Getting ISO
 wget --continue -O "${DIRNAME}/${ISO_NAME}" "${REMOTE_ISO}"
 ISO="${DIRNAME}/${ISO_NAME}"
 
-l="----- Wiping out beginning of ${DISK}"
+#----- Wiping out beginning of ${DISK}
 dd if=/dev/zero of="${DISK}" bs=10M count=5
 
-l="----- Preparing disk partitions"
+#----- Preparing disk partitions
 (echo n; echo p; echo 1; echo ; echo ; echo w) | fdisk "${DISK}"
 partx -u "${DISK}"
 
+#----- Creating a filesystem on ${PART}
 PART="${DISK}1"
-l="----- Creating a filesystem on ${PART}"
 mkfs.ext2 "${PART}"
 
-mkdir -p /mnt/usb
-mount "${PART}" /mnt/usb
-grub-install --root-directory=/mnt/usb "${DISK}"
+#----- mount usb
+mkdir -p ${MNT_USB}
+mount ${PART} ${MNT_USB}
+grub-install --root-directory=${MNT_USB} ${DISK}
 
-l="----- Download the initrd image"
-mkdir "/mnt/usb/hdmedia-${DEBIAN_RELEASE}"
-wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/vmlinuz"   "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/vmlinuz"
-wget -O "/mnt/usb/hdmedia-${DEBIAN_RELEASE}/initrd.gz" "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/initrd.gz"
-mkdir -p /mnt/usb/isos
-rsync -aP "${ISO}" /mnt/usb/isos
+#----- Download the initrd image
+mkdir "${MNT_USB}/hdmedia-${DEBIAN_RELEASE}"
+wget -O "${MNT_USB}/hdmedia-${DEBIAN_RELEASE}/vmlinuz"   "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/vmlinuz"
+wget -O "${MNT_USB}/hdmedia-${DEBIAN_RELEASE}/initrd.gz" "${DEBIAN_MIRROR}/debian/dists/${DEBIAN_RELEASE}/main/installer-${ARCH}/current/images/hd-media/initrd.gz"
+mkdir -p ${MNT_USB}/isos
+rsync -aP "${ISO}" ${MNT_USB}/isos
 
-l="----- Create grub config file"
-cat << EOF > /mnt/usb/boot/grub/grub.cfg
+#----- Create grub config file
+cat << EOF > ${MNT_USB}/boot/grub/grub.cfg
 set hdmedia="/hdmedia-${DEBIAN_RELEASE}"
 set preseed="/hd-media/preseed"
 set iso="/isos/${ISO_NAME}"
@@ -84,10 +86,10 @@ menuentry "Debian ${DEBIAN_RELEASE} ${ARCH} MANUAL install (HOME MEDIA SERVER) $
 }
 EOF
 
-l="----- Create preseed config file"
+#----- Create preseed config file
 
-mkdir /mnt/usb/preseed
-cat << EOF > /mnt/usb/preseed/debian.preseed
+mkdir ${MNT_USB}/preseed
+cat << EOF > ${MNT_USB}/preseed/debian.preseed
 # locale
 d-i debian-installer/locale           string   en_US
 d-i keyboard-configuration/xkb-keymap select   us
@@ -179,6 +181,6 @@ d-i finish-install/reboot_in_progress note
 EOF
 
 sync
-umount /mnt/usb
+umount ${MNT_USB}
 
-l="Finished successfully!"
+echo "=============   Finished successfully!  ================"
