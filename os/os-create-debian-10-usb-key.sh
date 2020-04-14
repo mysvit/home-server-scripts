@@ -18,12 +18,12 @@ ISO_NAME="${REMOTE_ISO##*/}"
 ##### INPUT
 : "${v:================================================================================}"
 fdisk -l | grep "Disk /dev"
-l="==============================================================================="
-l="====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB    ====="
-l="====                   FOR SEFATY PERPUSE DISCONECT THEM.                 ====="
-l="====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE          ====="
-l="==============================================================================="
-l="Enter usb key device from list (/dev/sdb for example) : "
+: "${v:================================================================================}"
+: "${v:====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB     =====}"
+: "${v:====                   FOR SEFATY PERPUSE DISCONECT THEM.                  =====}"
+: "${v:====          TO AVOID ERASE DATA IF YOU CHOUCE WRONG USB DEVICE           =====}"
+: "${v:================================================================================}"
+: "${v:=Enter usb key device from list (/dev/sdb for example) : }"
 read DISK
 [ -z ${DISK} ] && l="Please provide root password." && exit
 
