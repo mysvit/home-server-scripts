@@ -4,7 +4,7 @@ echo "
 0 Go back
 
 1 List hdd and usb devices (fdisk -l)
-2 
+2 Mount on startup usb disk
 "
 
 echo -n "Enter number : "
