@@ -3,7 +3,7 @@ clear
 echo "
 0 Go back
 
-1 List hdd and usb devices
+1 List hdd and usb devices (fdisk -l)
 "
 
 echo -n "Enter number : "
