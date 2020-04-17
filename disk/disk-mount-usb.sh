@@ -1,12 +1,13 @@
 #!/bin/bash
 # mount usb on startup
-f="/etc/fstab"
+clear
+FSTAB="/etc/fstab"
 fdisk -l
 
-mountLine = "mount /dev/sdc /mnt/usb"
+echo "Enter device what you want to mount [/dev/sdc for example] : "
+read MOUNT_DEVICE
+echo "Enter mount path [/mnt/usb for example] : "
+read MOUNT_PATH
 
-echo "Enter [/dev/sdc?] what you want to mount to [/mnt/usb?] : "
-read $mountLine
-
-echo $mountLine >> $f
-nano $f
+echo "mount $MOUNT_DEVICE $MOUNT_PATH" >> $FSTAB
+nano $FSTAB
