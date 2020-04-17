@@ -8,7 +8,7 @@ echo "
 
 echo -n "Enter number : "
 read COMMAND
-[ $COMMAND -ne 1 ] && exit
+[ $COMMAND -eq 0 ] && exit
 
 case $COMMAND in
   1)
@@ -23,4 +23,4 @@ esac
 
 echo -n "Script finished. Press any key to continue : "
 read
-bash ./usb/index.sh
+bash ./disk/index.sh
