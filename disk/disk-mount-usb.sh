@@ -13,7 +13,7 @@ read MOUNT_DEVICE
 echo -n "Enter mount path [/mnt/usb for example] : "
 read MOUNT_PATH
 [ -z $MOUNT_PATH ] && echo "Please provide mount path." && exit
-if [ !-d $MOUNT_PATH ]
+if [ ! -d $MOUNT_PATH ]
 then
   echo -n "Directory $MOUNT_PATH DOES NOT exists. Do you want to create it [Y/n] : " 
   read YES_NO
