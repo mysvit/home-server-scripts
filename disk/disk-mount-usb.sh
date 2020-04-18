@@ -17,7 +17,7 @@ if [ ! -d $MOUNT_PATH ]
 then
   echo -n "Directory $MOUNT_PATH DOES NOT exists. Do you want to create it [Y/n] : " 
   read YES_NO
-  [ -z $YES_NO ] || [ "$YES_NO" = "n" ] || [ "$YES_NO" = "N" ] && exit
+  [ -z $YES_NO ] || [ "$YES_NO" = "n" ] || [ "$YES_NO" = "N" ] && echo "Answer no! Script canceled!" &&exit
   mkdir $MOUNT_PATH
 fi
 
