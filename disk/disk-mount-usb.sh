@@ -9,6 +9,7 @@ echo
 echo -n "Enter device what you want to mount [/dev/sdb1 for example] : "
 read MOUNT_DEVICE
 [ -z $MOUNT_DEVICE ] && echo "Please provide mount device." && exit
+MOUNT_ID=$(blkid $MOUNT_DEVICE | awk -F'"' '{print $2}')
 
 echo -n "Enter mount path [/mnt/usb for example] : "
 read MOUNT_PATH
