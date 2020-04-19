@@ -177,8 +177,8 @@ echo "deb-src http://security.debian.org/debian-security buster/updates main"  >
 echo "deb http://deb.debian.org/debian/ buster-updates main"                   >> /target/etc/apt/sources.list; \
 echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >> /target/etc/apt/sources.list; \
 \
-echo "#!/usr/bin/bash" > /target/home/home-script.sh; \
-echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server; bash index.sh;"  >> /target/home/init-script.sh
+echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
+echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
 
 # power of
 d-i finish-install/reboot_in_progress note
