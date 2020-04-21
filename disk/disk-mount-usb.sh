@@ -10,6 +10,7 @@ echo -n "Enter device what you want to mount [/dev/sdb1 for example] : "
 read MOUNT_DEVICE
 [ -z $MOUNT_DEVICE ] && echo "Please provide mount device." && exit
 MOUNT_ID=$(blkid $MOUNT_DEVICE | awk -F'"' '{print $2}')
+echo "Your USB ID is $MOUNT_ID"
 
 echo -n "Enter mount path [/mnt/usb for example] : "
 read MOUNT_PATH
@@ -25,5 +26,6 @@ fi
 set -e -x -o pipefail
 mount $MOUNT_DEVICE $MOUNT_PATH
 
-echo "mount $MOUNT_DEVICE $MOUNT_PATH" >> $FSTAB
+echo "# mount $MOUNT_DEVICE $MOUNT_PATH" >> $FSTAB
+echo "UUID=$MOUNT_ID $MOUNT_PATH auto nosuid,nodev,nofail 0 0" >> $FSTAB
 nano $FSTAB
