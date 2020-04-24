@@ -3,9 +3,9 @@ clear
 echo "
 0 Go back
 
-1 Mount USB
-2 Mount SAMBA
-"
+1 Install Samba
+2 Connect to samba share
+3 Mount samba share and add to StartUp"
 
 echo -n "Enter number:"
 read SELECT
