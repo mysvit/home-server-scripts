@@ -7,31 +7,26 @@ echo "
 2 Connect to samba share
 3 Mount samba share and add to StartUp"
 
-echo -n "Enter number:"
-read SELECT
+echo -n "Enter number : "
+read COMMAND
+[ $COMMAND -eq 0 ] && exit
 
-if [ $SELECT -eq 0 ]
-then
-    echo "You exited from script."
-else
-
-case $SELECT in
-
+case $COMMAND in
   1)
-    bash ./mount/mount-usb.sh
+    bash ./samba/samba-install.sh
     ;;
-
   2)
-    bash ./mount/mount-samba.sh
+    bash ./samba/samba-connect.sh
     ;;
-
+  3)
+    bash ./samba/samba-mount.sh
+    ;;
   *)
-    echo "unknown option pres ENTER to restart : "
+    echo "unknown option pres ENTER to restart"
     read
     ;;
 esac
 
-# run script again simulate goto to begin
-bash index.sh
-
-fi
+echo -n "Script finished. Press any key to continue : "
+read
+bash ./disk/index.sh
