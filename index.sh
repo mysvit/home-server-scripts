@@ -6,8 +6,8 @@ echo "
 1 My Scripts (mount usb, make work forlders)
 
 2 Network
-3 Disk
-4 Mount devices (StartUp)
+3 Disk & USB
+4 Samba
 5 Install Applications
 6 Install server on USB
 "
@@ -28,7 +28,7 @@ case $COMMAND in
     bash ./disk/index.sh
     ;;
   4)
-    bash ./mount/index.sh
+    bash ./samba/index.sh
     ;;
   5)
     bash ./app/index.sh
