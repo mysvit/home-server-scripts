@@ -21,8 +21,7 @@ case $COMMAND in
     ;;
 
   *)
-    echo "unknown option pres ENTER to restart : "
-    read
+    echo "unknown option."
     ;;
 esac
 
