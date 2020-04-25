@@ -29,4 +29,4 @@ esac
 
 echo -n "Script finished. Press any key to continue : "
 read
-bash ./disk/index.sh
+bash ./samba/index.sh
