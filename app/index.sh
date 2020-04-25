@@ -3,8 +3,8 @@ clear
 echo "
 0 Go back
 
-1 Jellyfin - media server 
-2 Deluge - torrent client with web ui 
+1 Jellyfin - media server - server_ip:8096
+2 Deluge - torrent client with web ui - server_ip:8112
 "
 echo -n "Enter number : "
 read COMMAND
