@@ -3,18 +3,14 @@ clear
 echo "
 0 Go back
 
-1 Install media server Jellyfin and restore configuration from backup if exist
-2 Install torrent client with web interface Deluge
+1 Jellyfin - media server 
+2 Deluge - torrent client with web ui 
 "
 echo -n "Enter number : "
-read SELECT
+read COMMAND
+[ $COMMAND -eq 0 ] && exit
 
-if [ $SELECT -eq 0 ]
-then
-    echo "You exited from script."
-else
-
-case $SELECT in
+case $COMMAND in
 
   1)
     bash ./app/app-jellyfin.sh
@@ -30,7 +26,6 @@ case $SELECT in
     ;;
 esac
 
-# run script again simulate goto to begin
-bash index.sh
-
-fi
+echo -n "Script finished. Press any key to continue : "
+read
+bash ./app/index.sh
