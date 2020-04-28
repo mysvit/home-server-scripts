@@ -15,4 +15,4 @@ PATH-500G-1="/media/hdd-500G-1"
 MY-SVIT="/mysvit"
 
 # MDEIA link
-J-MEDIA="/mysvit/media"
+SL-J-MEDIA="/mysvit/media"
