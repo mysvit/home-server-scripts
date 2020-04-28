@@ -12,7 +12,7 @@ USB-ID-500G-1="??????-GJH984"
 MOUNT-PATH-500G-1="/media/hdd-500G-1"
 
 # MY ROOT FOLDER
-MY-SVIT="/mysvit"
+MYSVIT="/mysvit"
 
 # MDEIA link
 SL-J-MEDIA="/mysvit/media"
