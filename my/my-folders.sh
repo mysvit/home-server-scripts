@@ -1,4 +1,5 @@
 #!/bin/bash
+source my-config.sh
 
 # media, torrent(deluge), backup folders
 #d-deluge=$mnt-hdd-500G-1
