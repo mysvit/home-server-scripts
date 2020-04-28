@@ -7,13 +7,9 @@ echo "
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
 "
 
-echo -n "Enter number:"
-read SELECT
-
-if [ $SELECT -eq 0 ]
-then
-    echo "cd .."
-else
+echo -n "Enter number : "
+read COMMAND
+[ $COMMAND -eq 0 ] && exit
 
 case $SELECT in
 
@@ -30,7 +26,7 @@ case $SELECT in
     ;;
 esac
 
-# run script again simulate goto to begin
+echo -n "Script finished. Press any key to continue : "
+read
 bash ./my/index.sh
 
-fi
