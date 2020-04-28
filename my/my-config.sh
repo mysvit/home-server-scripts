@@ -13,6 +13,13 @@ MOUNT-PATH-500G-1="/media/hdd-500G-1"
 
 # MY ROOT FOLDER
 MYSVIT="/mysvit"
+MYSVIT-DELUGE=$MYSVIT"/deluge"
 
-# MDEIA link
-SL-J-MEDIA="/mysvit/media"
+# BACKUP
+PH-BACKUP=$MOUNT-PATH-8T-1"/backup"
+SL-BACKUP=$MYSVIT"/backup"
+# MEDIA
+PH-MEDIA=$MOUNT-PATH-8T-1"/media"
+SL-MEDIA=$MYSVIT"/media"
+# DELUGE download
+SL-D-DOWNLOAD=$MYSVIT-DELUGE"/download"
