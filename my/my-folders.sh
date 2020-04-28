@@ -1,19 +1,14 @@
 #!/bin/bash
 source my-config.sh
 
-# media, torrent(deluge), backup folders
-#d-deluge=$mnt-hdd-500G-1
-#sl-deluge="/mnt/deluge"
-#d-media="$mnt-hdd-8T-1/media"
-#sl-media="/mnt/media"
-#d-backup="$mnt-hdd-8T-1/backup"
-#sl-backup="/mnt/backup"
-#d-backup-jellyfin="$mnt-hdd-8T-1/backup/jellyfin"
+mkdir $MYSVIT
+mkdir $MYSVIT-DELUGE
 
-#mkdir $d-backup-jellyfin
+rm $SL-BACKUP
+ln -s $PH-BACKUP $SL-BACKUP
 
-#mkdir $J-MEDIA
+rm $SL-MEDIA
+ln -s $PH-MEDIA $SL-MEDIA
 
-ln -s $PATH-8T-1/media $SL-J-MEDIA
-#ln -s $d-deluge $sl-deluge
-#ln -s $d-backup $sl-backup
+rm $SL-D-DOWNLOAD
+ln -s $MOUNT-PATH-500G-1 $SL-D-DOWNLOAD
