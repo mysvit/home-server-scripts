@@ -3,7 +3,7 @@ source my-config.sh
 
 systemctl stop jellyfin
 
-chown -R jellyfin:jellyfin /mnt/backup/jellyfin/*
+chown -R jellyfin:jellyfin $SL-BACKUP/jellyfin/*
 find $SL-BACKUP/jellyfin -type d -exec chmod 755 {} \;
 find $SL-BACKUP/jellyfin -type f -exec chmod 644 {} \;
 
