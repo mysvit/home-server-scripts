@@ -1,4 +1,5 @@
-# restore from backup
+#!/bin/bash
+source my-config.sh
 
 systemctl stop jellyfin
 
