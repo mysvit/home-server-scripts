@@ -4,10 +4,10 @@
 systemctl stop jellyfin
 
 # data folder
-rm /mnt/backup/jellyfin/var-lib-jellyfin.zip
-zip -r1 /mnt/backup/jellyfin/var-lib-jellyfin.zip /var/lib/jellyfin/*
+rm @SL-BACKUP/jellyfin/var-lib-jellyfin.zip
+zip -r1 @SL-BACKUP/jellyfin/var-lib-jellyfin.zip /var/lib/jellyfin/*
 # config
-rm /mnt/backup/jellyfin/etc-jellyfin.zip
-zip -r1 /mnt/backup/jellyfin/etc-jellyfin.zip /etc/jellyfin/*
+rm @SL-BACKUP/jellyfin/etc-jellyfin.zip
+zip -r1 @SL-BACKUP/jellyfin/etc-jellyfin.zip /etc/jellyfin/*
 
 systemctl start jellyfin
