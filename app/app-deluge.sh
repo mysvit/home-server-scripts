@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # config located /home/deluge/.config/core.conf
+#sed  -i 's/"move_completed_path".*/"move_completed_path":"test"/' /home/home-server/core.conf
+
 #open deluge web your-server-ip:8112
 # default password = deluge
 # change password, download folder and compleader folder
