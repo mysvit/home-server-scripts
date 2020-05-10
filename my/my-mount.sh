@@ -2,15 +2,15 @@
 source my-config.sh
 
 # HDD 8TB
-echo "# HDD USB 8TB $USB-DEV-8T-1" >> $FSTAB
-echo "UUID=$USB-ID-8T-1 $MOUNT-PATH-8T-1 auto nosuid,nodev,nofail 0 0" >> $FSTAB
+echo "# HDD USB 8TB $USB_DEV_8T_1" >> $FSTAB
+echo "UUID=$USB_ID_8T_1 $MOUNT_PATH_8T_1 auto nosuid,nodev,nofail 0 0" >> $FSTAB
 
 # HDD 500GB
-echo "# USB HDD 500GB  $USB-DEV-500G-1" >> $FSTAB
-echo "UUID=$USB-DEV-500G-1 $MOUNT-PATH-500G-1 auto nosuid,nodev,nofail 0 0" >> $FSTAB
+echo "# USB HDD 500GB  $USB_DEV_500G_1" >> $FSTAB
+echo "UUID=$USB_DEV_500G_1 $MOUNT_PATH_500G_1 auto nosuid,nodev,nofail 0 0" >> $FSTAB
 
-mkdir $MOUNT-PATH-8T-1
-mkdir $MOUNT-PATH-500G-1
+mkdir $MOUNT_PATH_8T_1
+mkdir $MOUNT_PATH_500G_1
 
 nano $FSTAB
 mount -a
