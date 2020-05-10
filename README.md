@@ -1,6 +1,6 @@
-# Home server zero configuration scripts
+# under development
 
-under development
+# Home server zero configuration scripts
 
 Debian Server 10
 
