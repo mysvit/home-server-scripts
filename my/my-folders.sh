@@ -2,13 +2,13 @@
 source my-config.sh
 
 mkdir $MYSVIT
-mkdir $MYSVIT-DELUGE
+mkdir $MYSVIT_DELUGE
 
-rm $SL-BACKUP
-ln -s $PH-BACKUP $SL-BACKUP
+rm $SL_BACKUP
+ln -s $PH_BACKUP $SL_BACKUP
 
-rm $SL-MEDIA
-ln -s $PH-MEDIA $SL-MEDIA
+rm $SL_MEDIA
+ln -s $PH_MEDIA $SL_MEDIA
 
-rm $SL-D-DOWNLOAD
-ln -s $MOUNT-PATH-500G-1 $SL-D-DOWNLOAD
+rm $SL_D_DOWNLOAD
+ln -s $MOUNT_PATH_500G_1 $SL_D_DOWNLOAD
