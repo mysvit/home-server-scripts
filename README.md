@@ -1,5 +1,7 @@
 # Home server zero configuration scripts
 
+under development
+
 Debian Server 10
 
 Install git app and get home-server-scripts scripts and run index.sh
