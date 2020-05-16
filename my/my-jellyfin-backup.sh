@@ -7,9 +7,9 @@ systemctl stop jellyfin
 mkdir "${MYSVIT_BACKUP}/jellyfin"
 # data folder
 rm "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip"
-zip -r1 "${SL_BACKUP}/jellyfin/var-lib-jellyfin.zip" /var/lib/jellyfin/*
+zip -r1 "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip" /var/lib/jellyfin/*
 # config
 rm "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip"
-zip -r1 "${SL_BACKUP}/jellyfin/etc-jellyfin.zip" /etc/jellyfin/*
+zip -r1 "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip" /etc/jellyfin/*
 
 systemctl start jellyfin
