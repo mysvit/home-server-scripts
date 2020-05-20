@@ -5,6 +5,7 @@ echo "
 
 1 Jellyfin - media server - server_ip:8096
 2 Deluge - torrent client with web ui - server_ip:8112
+10 MC - file manager
 "
 echo -n "Enter number : "
 read COMMAND
@@ -18,6 +19,10 @@ case $COMMAND in
 
   2)
     bash ./app/app-deluge.sh
+    ;;
+
+  3)
+    bash ./app/app-mc.sh
     ;;
 
   *)
