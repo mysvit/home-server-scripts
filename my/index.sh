@@ -5,6 +5,8 @@ echo "
 
 1 Mount my USB, Network devices and put in /etc/fstab for start up 
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
+3 Install Jellyfin and restore metadata from backup
+4 Install Deluge torrent client and restore config from backup
 "
 
 echo -n "Enter number : "
@@ -18,6 +20,14 @@ case $SELECT in
     ;;
   2)
     bash ./my/my-folders.sh
+    ;;
+  3)
+    bash ./app/app-jellyfin.sh
+    bash ./my/my-jellyfin-restore.sh
+    ;;
+  3)
+    bash ./app/app-deluge.sh
+    bash ./my/my-deluge-restore.sh
     ;;
 
   *)
