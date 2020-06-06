@@ -7,9 +7,9 @@ USB_ID_8T_1="FGH09H_GJH984"
 MOUNT_PATH_8T_1="/media/hdd-8T-1"
 
 # HDD 500GB
-USB_DEV_500G_1="/dev/sdc2"
-USB_ID_500G_1="??????_GJH984"
-MOUNT_PATH_500G_1="/media/hdd-500G-1"
+#USB_DEV_500G_1="/dev/sdc2"
+#USB_ID_500G_1="??????_GJH984"
+#MOUNT_PATH_500G_1="/media/hdd-500G-1"
 
 # BACKUP
 PH_BACKUP="${MOUNT_PATH_8T_1}/backup"
