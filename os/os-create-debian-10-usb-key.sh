@@ -163,8 +163,8 @@ d-i pkgsel/upgrade    select      none
 # echo "iface enp0s8 inet dhcp"   >> /target/etc/network/interfaces; \
 
 d-i preseed/late_command string \
-echo "allow-hotplug enp0s1"       >> /target/etc/network/interfaces; \
-echo "iface enp0s1 inet static"   >> /target/etc/network/interfaces; \
+echo "allow-hotplug enp1s0"       >> /target/etc/network/interfaces; \
+echo "iface enp1s0 inet static"   >> /target/etc/network/interfaces; \
 echo "address 192.168.1.10"       >> /target/etc/network/interfaces; \
 echo "netmask 255.255.255.0"      >> /target/etc/network/interfaces; \
 echo "gateway 192.168.1.1"        >> /target/etc/network/interfaces; \
