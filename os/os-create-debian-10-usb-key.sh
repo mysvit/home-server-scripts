@@ -169,6 +169,7 @@ echo "address 192.168.1.10"       >> /target/etc/network/interfaces; \
 echo "netmask 255.255.255.0"      >> /target/etc/network/interfaces; \
 echo "gateway 192.168.1.1"        >> /target/etc/network/interfaces; \
 echo "dns-nameservers 192.168.1.1 8.8.8.8"  >> /target/etc/network/interfaces; \
+echo "nameserver 192.168.1.1"  >> /target/etc/resolve.conf; \
 \
 echo "media"  > /target/etc/hostname; \
 \
