@@ -102,7 +102,7 @@ d-i clock-setup/utc                   boolean  true
 d-i clock-setup/ntp                   boolean  true
 
 # network
-d-i hw-detect/load_firmware           boolean  true
+d-i hw-detect/load_firmware           boolean false
 d-i netcfg/enable                     boolean false
 # d-i netcfg/hostname                   string  media
 
