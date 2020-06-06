@@ -18,7 +18,9 @@ MNT_USB="/mnt/usb_key_${DEBIAN_RELEASE}"
 
 ##### INPUT
 echo "================================================================================"
+echo ""
 fdisk -l | grep "Disk /dev"
+echo ""
 echo "================================================================================"
 echo "====      IF YOU HAVE HARD DRIVES WITH YOU MEDIA DATA CONNECTED TO USB     ====="
 echo "====                   FOR SEFATY PERPUSE DISCONECT THEM.                  ====="
