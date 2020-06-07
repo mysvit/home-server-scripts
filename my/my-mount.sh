@@ -1,5 +1,5 @@
 #!/bin/bash
-source my-config.sh
+source ./my/my-config.sh
 
 # HDD 8TB
 echo "# HDD USB 8TB $USB_DEV_8T_1" >> $FSTAB
