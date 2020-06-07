@@ -10,10 +10,10 @@ echo "
 "
 
 echo -n "Enter number : "
-read SELECT
-[ $SELECT -eq 0 ] && exit
+read COMMAND
+[ $COMMAND -eq 0 ] && exit
 
-case $SELECT in
+case $COMMAND in
 
   1)
     bash ./my/my-mount.sh
