@@ -25,13 +25,13 @@ case $SELECT in
     bash ./app/app-jellyfin.sh
     bash ./my/my-jellyfin-restore.sh
     ;;
-  3)
+  4)
     bash ./app/app-deluge.sh
     bash ./my/my-deluge-restore.sh
     ;;
 
   *)
-    echo "unknown option pres ENTER to restart : "
+    echo "unknown selected option press ENTER to restart : "
     read
     ;;
 esac
