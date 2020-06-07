@@ -10,8 +10,8 @@ echo "
 "
 
 echo -n "Enter number : "
-read COMMAND
-[ $COMMAND -eq 0 ] && exit
+read SELECT
+[ $SELECT -eq 0 ] && exit
 
 case $SELECT in
 
