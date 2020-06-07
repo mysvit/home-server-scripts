@@ -3,7 +3,7 @@ FSTAB="/etc/fstab"
 
 # HDD 8TB
 USB_DEV_8T_1="/dev/sdc1"
-USB_ID_8T_1="FGH09H_GJH984"
+USB_ID_8T_1="MEDIA"
 MOUNT_PATH_8T_1="/media/hdd-8T-1"
 
 # HDD 500GB
