@@ -168,8 +168,9 @@ echo "iface enp1s0 inet static"   >> /target/etc/network/interfaces; \
 echo "address 192.168.1.10"       >> /target/etc/network/interfaces; \
 echo "netmask 255.255.255.0"      >> /target/etc/network/interfaces; \
 echo "gateway 192.168.1.1"        >> /target/etc/network/interfaces; \
-echo "dns-nameservers 192.168.1.1 8.8.8.8"  >> /target/etc/network/interfaces; \
-echo "nameserver 192.168.1.1"  >> /target/etc/resolve.conf; \
+\
+echo "nameserver 192.168.1.1"  > /target/etc/resolv.conf; \
+echo "nameserver 8.8.8.8"  >> /target/etc/resolv.conf; \
 \
 echo "media"  > /target/etc/hostname; \
 \
