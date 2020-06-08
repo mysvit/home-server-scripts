@@ -1,5 +1,6 @@
 #!/bin/bash
 source ./my/my-config.sh
+apt update
 apt install -y ntfs-3g
 
 # HDD 8TB
