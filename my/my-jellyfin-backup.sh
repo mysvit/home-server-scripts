@@ -1,5 +1,5 @@
 #!/bin/bash
-source my-config.sh
+source ./my/my-config.sh
 
 systemctl stop jellyfin
 
