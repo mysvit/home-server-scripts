@@ -23,6 +23,11 @@ case $COMMAND in
     ;;
   3)
     bash ./app/app-jellyfin.sh
+    echo
+    echo
+    echo ********************************************************************************************************
+    echo
+    echo
     bash ./my/my-jellyfin-restore.sh
     ;;
   4)
