@@ -2,7 +2,6 @@
 source ./my/my-config.sh
 
 mkdir $MYSVIT
-mkdir $MYSVIT_DELUGE
 
 rm $MYSVIT_BACKUP
 ln -s $PH_BACKUP $MYSVIT_BACKUP
