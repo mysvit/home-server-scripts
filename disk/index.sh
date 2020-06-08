@@ -18,6 +18,9 @@ case $COMMAND in
   2)
     bash ./disk/disk-mount-usb.sh
     ;;
+  3)
+    bash ./disk/disk-ntfs-3g.sh
+    ;;
   *)
     echo "unknown option pres ENTER to restart"
     read
