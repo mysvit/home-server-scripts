@@ -21,7 +21,7 @@ Group=deluge
 UMask=022
 ExecStart=/usr/bin/deluged -d
 Restart=on-failure
-TimeoutStopSec=300
+TimeoutStopSec=5000
 [Install]
 WantedBy=multi-user.target" > $deluged_service
 
