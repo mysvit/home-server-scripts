@@ -1,6 +1,9 @@
 #!/bin/bash
 source ./my/my-config.sh
 
+chown -R deluge:deluge "${MYSVIT_DELUGE}/*"
+find "${MYSVIT_DELUGE}" -type d -exec chmod 755 {} \;
+
 if [ -f "${MYSVIT_BACKUP}/deluge/config.zip" ]
 then
   systemctl stop deluge
