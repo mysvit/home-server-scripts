@@ -32,6 +32,11 @@ case $COMMAND in
     ;;
   4)
     bash ./app/app-deluge.sh
+    echo
+    echo
+    echo ********************************************************************************************************
+    echo
+    echo
     bash ./my/my-deluge-restore.sh
     ;;
 
