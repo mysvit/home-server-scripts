@@ -1,5 +1,5 @@
 #!/bin/bash
-source my-config.sh
+source ./my/my-config.sh
 
 # make foledr if not exist
 mkdir "${MYSVIT_BACKUP}/deluge"
