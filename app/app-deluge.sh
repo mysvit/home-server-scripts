@@ -10,7 +10,7 @@
 apt install deluged deluge-webui -y
 adduser --system --group deluge
 
-f-deluged="/etc/systemd/system/deluged.service"
+deluged_service="/etc/systemd/system/deluged.service"
 echo "[Unit]
 Description=Deluge Bittorrent Client Daemon
 After=network-online.target
@@ -23,13 +23,13 @@ ExecStart=/usr/bin/deluged -d
 Restart=on-failure
 TimeoutStopSec=300
 [Install]
-WantedBy=multi-user.target" > $f-deluged
+WantedBy=multi-user.target" > $deluged_service
 
 systemctl enable deluged
 systemctl start deluged
 
 
-f-deluge-web="/etc/systemd/system/deluge-web.service"
+deluge_web_service="/etc/systemd/system/deluge-web.service"
 echo "[Unit]
 Description=Deluge Bittorrent Client Web Interface
 After=network-online.target
@@ -41,7 +41,7 @@ UMask=027
 ExecStart=/usr/bin/deluge-web
 Restart=on-failure
 [Install]
-WantedBy=multi-user.target" > $f-deluge-web
+WantedBy=multi-user.target" > $deluge_web_service
 
 systemctl enable deluge-web
 systemctl start deluge-web
