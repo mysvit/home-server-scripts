@@ -1,7 +1,6 @@
 #!/bin/bash
 FSTAB="/etc/fstab"
 CRONTAB_DIR="/var/spool/cron/crontabs"
-CRONTAB_BACKUP="${CRONTAB_DIR}/backup"
 
 # HDD 8TB
 USB_DEV_8T_1="/dev/sdc1"
