@@ -5,6 +5,7 @@ echo "
 
 1 Jellyfin - media server - server_ip:8096
 2 Deluge - torrent client with web ui - server_ip:8112 (default password: deluge)
+20 - Uninstall Deluge
 10 Midnight commander (mc)- file manager
 "
 echo -n "Enter number : "
@@ -19,6 +20,10 @@ case $COMMAND in
 
   2)
     bash ./app/app-deluge.sh
+    ;;
+
+  20)
+    bash ./app/app-deluge-uninstall.sh
     ;;
 
   10)
