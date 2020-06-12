@@ -99,7 +99,7 @@ cat << EOF > ${MNT_USB}/preseed/debian.preseed
 d-i debian-installer/locale           string   en_US
 d-i keyboard-configuration/xkb-keymap select   us
 d-i console-tools/archs               select   skip-config
-d-i time/zone                         string   CA/Toronto
+d-i time/zone                         string   America/Toronto
 d-i clock-setup/utc                   boolean  true
 d-i clock-setup/ntp                   boolean  true
 
