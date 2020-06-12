@@ -17,4 +17,4 @@ echo ***************************************************************************
 echo
 echo
 
-bash ./my/my-backup.sh
+bash ./my/my-deluge-restore.sh
