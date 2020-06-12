@@ -1,6 +1,10 @@
 #!/bin/bash
 source ./my/my-config.sh
 
+apt update
+apt install -y zip
+apt install -y unzip
+
 mkdir $MYSVIT
 
 rm $MYSVIT_BACKUP
