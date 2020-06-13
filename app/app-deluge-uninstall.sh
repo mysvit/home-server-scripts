@@ -12,6 +12,6 @@ apt remove -y deluge-webui
 apt purge -y deluge-webui
 rm "/etc/systemd/system/deluge-web.service"
 
-delgroup deluge
 deluser deluge
+delgroup deluge
 rm -r /home/deluge
