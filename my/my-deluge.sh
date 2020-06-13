@@ -8,6 +8,9 @@ echo ""
 echo "***********************************  restore from backup **********************************************"
 echo ""
 
+echo "Wait 10s. and Press Enter"
+read
+
 bash ./my/my-deluge-restore.sh
 
 echo ""
