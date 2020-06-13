@@ -11,3 +11,4 @@ apt remove deluge-webui -y
 rm "/etc/systemd/system/deluge-web.service"
 
 deluser deluge
+rm -r /home/deluge
