@@ -6,6 +6,7 @@ echo "
 1 Mount my USB, Network devices and put in /etc/fstab for start up 
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
 3 Install Jellyfin and restore metadata from backup
+
 4 Install Deluge torrent client and restore configs from backup
 40 Uninstall Deluge and backup configs
 "
