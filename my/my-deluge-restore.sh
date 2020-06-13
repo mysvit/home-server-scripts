@@ -14,8 +14,8 @@ then
   find /home/deluge/.config/deluge -type d -exec chmod 700 {} \;
   find /home/deluge/.config/deluge -type f -exec chmod 600 {} \;
 
-  systemctl start deluged --wait
-  systemctl start deluge-web --wait
+  systemctl start deluged
+  systemctl start deluge-web
   
   systemctl status deluged -l --no-pager
   systemctl status deluge-web -l --no-pager
