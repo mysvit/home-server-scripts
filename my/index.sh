@@ -7,7 +7,7 @@ echo "
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
 3 Install Jellyfin and restore metadata from backup
 4 Install Deluge torrent client and restore configs from backup
-4 Uninstall Deluge and backup configs
+40 Uninstall Deluge and backup configs
 "
 
 echo -n "Enter number : "
