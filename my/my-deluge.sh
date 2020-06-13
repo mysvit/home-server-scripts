@@ -4,15 +4,15 @@ source ./my/my-config.sh
 # install deluge
 bash ./app/app-deluge.sh
 
-echo
-echo ***********************************  restore from backup **********************************************
-echo
+echo ""
+echo "***********************************  restore from backup **********************************************"
+echo ""
 
 bash ./my/my-deluge-restore.sh
 
-echo
-echo ************************************ configure backup *************************************************
-echo
+echo ""
+echo "************************************ configure backup *************************************************"
+echo ""
 
 chown -R deluge:deluge "${MYSVIT_BACKUP}/deluge"
 find "${MYSVIT_BACKUP}/deluge" -type d -exec chmod 755 {} \;
