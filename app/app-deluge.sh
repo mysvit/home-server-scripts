@@ -22,6 +22,8 @@ UMask=022
 ExecStart=/usr/bin/deluged -d
 Restart=on-failure
 TimeoutStopSec=2000
+DefaultStartLimitIntervalSec=1
+StartLimitBurst=3
 [Install]
 WantedBy=multi-user.target" > $deluged_service
 
@@ -40,6 +42,8 @@ Group=deluge
 UMask=027
 ExecStart=/usr/bin/deluge-web
 Restart=on-failure
+DefaultStartLimitIntervalSec=1
+StartLimitBurst=3
 [Install]
 WantedBy=multi-user.target" > $deluge_web_service
 
