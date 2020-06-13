@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./my/my-config.sh
+source /home/home-server-scripts/my/my-config.sh
 
 chown -R deluge:deluge "${MYSVIT_DELUGE}/*"
 find "${MYSVIT_DELUGE}" -type d -exec chmod 755 {} \;
