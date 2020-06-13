@@ -14,7 +14,7 @@ echo
 echo ************************************ configure backup *************************************************
 echo
 
-chown -R deluge:deluge "${MYSVIT_BACKUP}/deluge/*"
+chown -R deluge:deluge "${MYSVIT_BACKUP}/deluge"
 find "${MYSVIT_BACKUP}/deluge" -type d -exec chmod 755 {} \;
 find "${MYSVIT_BACKUP}/deluge" -type f -exec chmod 655 {} \;
 
