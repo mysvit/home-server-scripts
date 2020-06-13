@@ -23,13 +23,13 @@ case $COMMAND in
     bash ./my/my-folders.sh
     ;;
   3)
-    bash ./app/app-jellyfin.sh
+    bash ./my/my-jellyfin.sh
     ;;
   4)
-    bash ./app/app-deluge.sh
+    bash ./my/my-deluge.sh
     ;;
   40)
-    bash ./app/app-deluge-uninstall.sh
+    bash ./my/my-deluge-uninstall.sh
     ;;
 
   *)
