@@ -26,7 +26,7 @@ TimeoutStopSec=2000
 WantedBy=multi-user.target" > $deluged_service
 
 systemctl enable deluged
-systemctl start deluged
+systemctl start deluged --wait
 
 
 deluge_web_service="/etc/systemd/system/deluge-web.service"
@@ -44,7 +44,7 @@ Restart=on-failure
 WantedBy=multi-user.target" > $deluge_web_service
 
 systemctl enable deluge-web
-systemctl start deluge-web
+systemctl start deluge-web  --wait
 
-systemctl status deluged
-systemctl status deluge-web
+systemctl status deluged -l --no-pager
+systemctl status deluge-web -l --no-pager
