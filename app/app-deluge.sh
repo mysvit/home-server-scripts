@@ -42,6 +42,7 @@ Group=deluge
 UMask=027
 ExecStart=/usr/bin/deluge-web
 Restart=on-failure
+TimeoutStopSec=2000
 DefaultStartLimitIntervalSec=10
 StartLimitBurst=10
 [Install]
