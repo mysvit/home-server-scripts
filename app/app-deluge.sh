@@ -45,3 +45,6 @@ WantedBy=multi-user.target" > $deluge_web_service
 
 systemctl enable deluge-web
 systemctl start deluge-web
+
+systemctl status deluged
+systemctl status deluge-web
