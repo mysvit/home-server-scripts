@@ -1,15 +1,26 @@
 #!/bin/bash
-source ./my/my-config.sh
+source /home/home-server-scripts/my/my-config.sh
 
 systemctl stop jellyfin
 
 # make foledr if not exist
-mkdir "${MYSVIT_BACKUP}/jellyfin"
+if [ ! -d "${MYSVIT_BACKUP}/jellyfin" ]
+then
+  mkdir "${MYSVIT_BACKUP}/jellyfin"
+fi
+
 # data folder
-rm "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip"
+if [ -f "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip" ]
+then
+  rm "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip"
+fi
 zip -r1 "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip" /var/lib/jellyfin/*
+
 # config
-rm "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip"
+if [ -f "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip" ]
+then
+  rm "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip"
+fi
 zip -r1 "${MYSVIT_BACKUP}/jellyfin/etc-jellyfin.zip" /etc/jellyfin/*
 
 systemctl start jellyfin
