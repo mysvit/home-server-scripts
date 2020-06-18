@@ -3,12 +3,14 @@ clear
 echo "
 0 Go back
 
-1 Jellyfin - media server - server_ip:8096
+1  - Install JELLYFIN - media server - server_ip:8096
 
-2 Deluge - torrent client with web ui - server_ip:8112 (default password: deluge)
-20 - Uninstall Deluge
+2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
+20 - Remove DELUGE
 
-10 Midnight commander (mc)- file manager
+2  - Install SAMBA - windows file share
+
+9  - Midnight commander (mc)- file manager
 "
 echo -n "Enter number : "
 read COMMAND
@@ -28,7 +30,11 @@ case $COMMAND in
     bash ./app/app-deluge-uninstall.sh
     ;;
 
-  10)
+  3)
+    bash ./app/app-samba.sh
+    ;;
+
+  9)
     bash ./app/app-mc.sh
     ;;
 
