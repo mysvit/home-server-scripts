@@ -8,7 +8,7 @@ echo "
 2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
 20 - Remove DELUGE
 
-2  - Install SAMBA - windows file share
+3  - Install SAMBA - windows file share
 
 9  - Midnight commander (mc)- file manager
 "
