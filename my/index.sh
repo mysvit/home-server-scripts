@@ -5,10 +5,11 @@ echo "
 
 1 Mount my USB, Network devices and put in /etc/fstab for start up 
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
-3 Install Jellyfin and restore metadata from backup
 
-4 Install Deluge torrent client and restore configs from backup
-40 Uninstall Deluge and backup configs
+3 Install JELLYFINE and restore metadata from backup
+
+4 Install DELUGE torrent client and restore configs from backup
+40 Remove DELUGE and backup configs
 "
 
 echo -n "Enter number : "
@@ -30,7 +31,7 @@ case $COMMAND in
     bash ./my/my-deluge.sh
     ;;
   40)
-    bash ./my/my-deluge-uninstall.sh
+    bash ./my/my-deluge-remove.sh
     ;;
 
   *)
