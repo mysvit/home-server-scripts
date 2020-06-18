@@ -6,10 +6,10 @@ echo "
 1  - Install JELLYFIN - media server - server_ip:8096
 
 2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
-20 - Uninstall DELUGE
+20 - Remove DELUGE
 
 3  - Install SAMBA - windows file share
-30 - Uninstall SAMBA
+30 - Remove SAMBA
 
 9  - Midnight commander (mc)- file manager
 "
@@ -28,14 +28,14 @@ case $COMMAND in
     ;;
 
   20)
-    bash ./app/app-deluge-uninstall.sh
+    bash ./app/app-deluge-remove.sh
     ;;
 
   3)
     bash ./app/app-samba.sh
     ;;
   30)
-    bash ./app/app-samba-uninstall.sh
+    bash ./app/app-samba-remove.sh
     ;;
 
   9)
