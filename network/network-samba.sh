@@ -5,10 +5,11 @@ echo -n "Enter path for share : "
 read sharePath
 echo -n "Enter user name for share : "
 read shareUser
-smbpasswd -a $shareUser
 
 if [! -z "$sharePath"] && [! -z $shareUser]
 then
+
+smbpasswd -a $shareUser
 
 echo "
 [mysvit]
