@@ -1,6 +1,6 @@
 #!/bin/bash
+clear
 
-cho
 echo -n "Enter path for share : "
 read sharePath
 echo -n "Enter user name for share : "
