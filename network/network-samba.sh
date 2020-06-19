@@ -21,6 +21,8 @@ echo "
 " >> /etc/samba/smb.conf
 
   nano /etc/samba/smb.conf
+  
+  systemctl restart smbd
 
 else
 
