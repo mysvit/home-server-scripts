@@ -4,8 +4,9 @@ echo "
 0 Go back
 
 1 Restart network
-2 Interfaces
-3 Hostname
+2 Add Interface
+3 Add Hostname
+4 Add Samba share
 "
 
 echo -n "Enter number:"
@@ -26,6 +27,9 @@ case $SELECT in
     ;;
   3)
     bash ./network/network-hostname.sh
+    ;;
+  4)
+    bash ./network/network-samba.sh
     ;;
 
   *)
