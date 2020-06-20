@@ -12,6 +12,7 @@ echo "
 30 - Remove SAMBA
 
 9  - Midnight commander (mc)- file manager
+91  - FFMPEG - coder
 "
 echo -n "Enter number : "
 read COMMAND
@@ -40,6 +41,9 @@ case $COMMAND in
 
   9)
     bash ./app/app-mc.sh
+    ;;
+  91)
+    bash ./app/app-ffmpeg.sh
     ;;
 
   *)
