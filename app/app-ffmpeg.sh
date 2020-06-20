@@ -1,6 +1,6 @@
 #!/bin/bash
 apt update
 echo 
-echo                      FFMPEG
+echo FFMPEG
 echo 
 apt install ffmpeg -y
