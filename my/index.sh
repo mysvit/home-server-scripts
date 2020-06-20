@@ -35,7 +35,7 @@ case $COMMAND in
   40)
     bash ./my/my-deluge-remove.sh
     ;;
-  99
+  99)
     bash ./app/app-mc.sh
     bash ./app/app-ffmpeg.sh
     ;;
