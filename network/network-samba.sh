@@ -6,7 +6,7 @@ read sharePath
 echo -n "Enter user name for share : "
 read shareUser
 
-if [ -z "$sharePath" ||  -z "$shareUser" ]
+if [[ -z "$sharePath" ]] || [[ -z "$shareUser" ]]
 then
   nano /etc/samba/smb.conf
 else
