@@ -10,6 +10,8 @@ echo "
 
 4 Install DELUGE torrent client and restore configs from backup
 40 Remove DELUGE and backup configs
+
+99 Install Additional app
 "
 
 echo -n "Enter number : "
@@ -33,7 +35,10 @@ case $COMMAND in
   40)
     bash ./my/my-deluge-remove.sh
     ;;
-
+  99
+    bash ./app/app-mc.sh
+    bash ./app/app-ffmpeg.sh
+    ;;
   *)
     echo "unknown selected option press ENTER to restart : "
     read
