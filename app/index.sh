@@ -12,7 +12,7 @@ echo "
 30 - Remove SAMBA
 
 9  - Midnight commander (mc)- file manager
-91  - FFMPEG - coder
+91 - FFMPEG - coder
 "
 echo -n "Enter number : "
 read COMMAND
