@@ -6,13 +6,12 @@ read sharePath
 echo -n "Enter user name for share : "
 read shareUser
 
-if [! -z "$sharePath"] && [! -z "$shareUser"]
+if [[ -z "$sharePath"] || [ -z "$shareUser"]]
 then
-
+  nano /etc/samba/smb.conf
+else
   smbpasswd -a $shareUser
-
-echo "
-[mysvit]
+  echo "[mysvit]
    comment = My Svit Share
    path = $sharePath
    browseable = yes
@@ -24,9 +23,4 @@ echo "
   nano /etc/samba/smb.conf
   
   systemctl restart smbd
-
-else
-
-  nano /etc/samba/smb.conf
-  
 fi
