@@ -11,8 +11,8 @@ echo "
 3  - Install SAMBA - windows file share
 30 - Remove SAMBA
 
-9  - Midnight commander (mc)- file manager
-91 - FFMPEG - coder
+91 - mc : Midnight commander - file manager
+92 - ffmpeg : video tools
 "
 echo -n "Enter number : "
 read COMMAND
@@ -39,10 +39,10 @@ case $COMMAND in
     bash ./app/app-samba-remove.sh
     ;;
 
-  9)
+  91)
     bash ./app/app-mc.sh
     ;;
-  91)
+  92)
     bash ./app/app-ffmpeg.sh
     ;;
 
