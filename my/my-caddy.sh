@@ -9,6 +9,7 @@ echo ""
 echo "***********************************  add Caddyfile  **********************************************"
 echo ""
 
+caddy stop
 cat << EOF > /etc/caddy/Caddyfile
 :80
 # Set this path to your site's directory.
@@ -23,3 +24,4 @@ log {
 	level DEBUG
 }
 EOF
+caddy start
