@@ -13,6 +13,7 @@ echo "
 
 91 - mc : Midnight commander - file manager
 92 - ffmpeg : video tools
+93 - caddy: platform for server app with https
 "
 echo -n "Enter number : "
 read COMMAND
