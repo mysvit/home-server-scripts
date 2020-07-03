@@ -4,16 +4,15 @@ echo "
 0 Go back
 
 1  - Install JELLYFIN - media server - server_ip:8096
-
 2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
-20 - Remove DELUGE
-
 3  - Install SAMBA - windows file share
-30 - Remove SAMBA
 
 91 - mc : Midnight commander - file manager
 92 - ffmpeg : video tools
 93 - caddy: platform for server app with https
+
+TO REMOVE ANY APP ADD TWO ZEROS TO THE END OF INSTALL NUMBER
+Example: to remove FFMPEG type 9200
 "
 echo -n "Enter number : "
 read COMMAND
@@ -29,14 +28,14 @@ case $COMMAND in
     bash ./app/app-deluge.sh
     ;;
 
-  20)
+  200)
     bash ./app/app-deluge-remove.sh
     ;;
 
   3)
     bash ./app/app-samba.sh
     ;;
-  30)
+  300)
     bash ./app/app-samba-remove.sh
     ;;
 
@@ -45,6 +44,12 @@ case $COMMAND in
     ;;
   92)
     bash ./app/app-ffmpeg.sh
+    ;;
+  93)
+    bash ./app/app-caddy.sh
+    ;;
+  9300)
+    bash ./app/app-caddy-remove.sh
     ;;
 
   *)

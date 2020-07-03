@@ -8,10 +8,12 @@ echo "
 
 3 Install JELLYFINE and restore metadata from backup
 
-4 Install DELUGE torrent client and restore configs from backup
-40 Remove DELUGE and backup configs
+4 Install DELUGE, restore configs from backup and add backup script to crontab
+40 Remove DELUGE and remove backup script from crontab (it will make backup before remove)
 
-99 Install Additional app
+5 Install Caddy
+
+99 Install Additional apps (mc, ffmpeg)
 "
 
 echo -n "Enter number : "
@@ -34,6 +36,9 @@ case $COMMAND in
     ;;
   40)
     bash ./my/my-deluge-remove.sh
+    ;;
+  5)
+    bash ./my/my-caddy.sh
     ;;
   99)
     bash ./app/app-mc.sh
