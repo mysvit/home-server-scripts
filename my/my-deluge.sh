@@ -22,5 +22,4 @@ find "${MYSVIT_BACKUP}/deluge" -type d -exec chmod 755 {} \;
 find "${MYSVIT_BACKUP}/deluge" -type f -exec chmod 655 {} \;
 
 # add backup config to crontab
-echo "0 1 * * * /bin/sh /home/home-server-scripts/my/my-deluge-backup.sh" > "${CRONTAB_DIR}/deluge"
-
+echo "0 1 * * * /bin/sh /home/home-server-scripts/my/my-deluge-backup.sh" >> "${CRONTAB_ROOT}"

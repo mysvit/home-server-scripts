@@ -40,6 +40,9 @@ case $COMMAND in
   5)
     bash ./my/my-caddy.sh
     ;;
+  6)
+    bash ./my/my-duckdns.sh
+    ;;
   99)
     bash ./app/app-mc.sh
     bash ./app/app-ffmpeg.sh
