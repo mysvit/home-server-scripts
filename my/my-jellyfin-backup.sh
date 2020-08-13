@@ -3,7 +3,7 @@ source /home/home-server-scripts/my/my-config.sh
 
 systemctl stop jellyfin
 
-# make foledr if not exist
+# make folder if not exist
 if [ ! -d "${MYSVIT_BACKUP}/jellyfin" ]
 then
   mkdir "${MYSVIT_BACKUP}/jellyfin"
