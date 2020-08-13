@@ -11,7 +11,8 @@ echo ""
 
 caddy stop
 cat << EOF > /etc/caddy/Caddyfile
-:80
+#:80
+www.stmichaelmontreal.ca
 # Set this path to your site's directory.
 root * /mysvit/web/stmichael/www
 # Enable the static file server.
