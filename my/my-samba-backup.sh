@@ -9,9 +9,9 @@ then
 fi
 
 # backup config
-if [ -f "${MYSVIT_BACKUP}/samba/smb.zip" ]
+if [ -f "${MYSVIT_BACKUP}/samba/samba.zip" ]
 then
-  rm "${MYSVIT_BACKUP}/samba/smb.zip"
+  rm "${MYSVIT_BACKUP}/samba/samba.zip"
 fi
 
-zip -r1 "$MYSVIT_BACKUP/samba/smb.zip" /etc/samba/*
+zip -r1 "$MYSVIT_BACKUP/samba/samba.zip" /etc/samba/*

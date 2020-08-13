@@ -8,7 +8,7 @@ echo "
 3  - Install SAMBA - windows file share
 
 91 - mc : Midnight commander - file manager
-92 - ffmpeg : video tools
+92 - ffmpeg & mkvtoolnix : video tools
 93 - caddy: platform for server app with https
 
 TO REMOVE ANY APP ADD TWO ZEROS TO THE END OF INSTALL NUMBER

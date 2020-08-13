@@ -6,14 +6,16 @@ echo "
 1 Mount my USB, Network devices and put in /etc/fstab for start up 
 2 Create my Work folders (Jellyfin, Deluge, BackUp)
 
-3 Install JELLYFINE and restore metadata from backup
+3 Install JELLYFIN and restore metadata from backup
 
 4 Install DELUGE, restore configs from backup and add backup script to crontab
 40 Remove DELUGE and remove backup script from crontab (it will make backup before remove)
 
-5 Install Caddy
+5 Install Samba and restore config from backup
 
-99 Install Additional apps (mc, ffmpeg)
+6 Install Caddy
+
+99 Install Additional apps (mc, ffmpeg, mkvtoolnix)
 "
 
 echo -n "Enter number : "
@@ -38,9 +40,12 @@ case $COMMAND in
     bash ./my/my-deluge-remove.sh
     ;;
   5)
-    bash ./my/my-caddy.sh
+    bash ./my/my-samba.sh
     ;;
   6)
+    bash ./my/my-caddy.sh
+    ;;
+  7)
     bash ./my/my-duckdns.sh
     ;;
   99)
