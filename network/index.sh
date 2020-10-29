@@ -7,6 +7,7 @@ echo "
 2 Add Interface
 3 Add Hostname
 4 Add Samba share
+4 Disable ipv6
 "
 
 echo -n "Enter number:"
@@ -31,7 +32,9 @@ case $SELECT in
   4)
     bash ./network/network-samba.sh
     ;;
-
+  5)
+    bash ./network/disable-ipv6.sh
+    ;;
   *)
     echo "unknown option pres ENTER to restart : "
     read
