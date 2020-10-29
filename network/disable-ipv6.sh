@@ -5,3 +5,6 @@ echo "net.ipv6.conf.all.disable_ipv6 = 1" > $f
 sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
 echo $f
 
+echo
+echo "Press ENTER to continue"
+read

@@ -7,7 +7,7 @@ echo "
 2 Add Interface
 3 Add Hostname
 4 Add Samba share
-4 Disable ipv6
+5 Disable ipv6
 "
 
 echo -n "Enter number:"
