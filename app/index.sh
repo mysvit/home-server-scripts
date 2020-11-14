@@ -10,6 +10,7 @@ echo "
 91 - mc : Midnight commander - file manager
 92 - ffmpeg & mkvtoolnix : video tools
 93 - caddy: platform for server app with https
+94 - youtube-dl
 
 TO REMOVE ANY APP ADD TWO ZEROS TO THE END OF INSTALL NUMBER
 Example: to remove FFMPEG type 9200
@@ -50,6 +51,9 @@ case $COMMAND in
     ;;
   9300)
     bash ./app/app-caddy-remove.sh
+    ;;
+  94)
+    bash ./app/app-youtube-dl.sh
     ;;
 
   *)
