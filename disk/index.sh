@@ -5,6 +5,8 @@ echo "
 
 1 List hdd and usb devices (fdisk -l)
 2 Mount on startup usb disk
+3 Instruction how to create and format to ext4
+91 Install support ntfs
 "
 
 echo -n "Enter number : "
@@ -19,6 +21,9 @@ case $COMMAND in
     bash ./disk/disk-mount-usb.sh
     ;;
   3)
+    bash ./disk/disk-create.sh
+    ;;
+  91)
     bash ./disk/disk-ntfs-3g.sh
     ;;
   *)
