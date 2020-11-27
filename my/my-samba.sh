@@ -18,4 +18,4 @@ echo "************************************ configure backup ********************
 echo ""
 
 # add backup config to crontab
-echo "0 1 * * * /bin/sh /home/home-server-scripts/my/my-samba-backup.sh" >> "${CRONTAB_ROOT}"
+echo "0 2 * * * /bin/sh /home/home-server-scripts/my/my-samba-backup.sh" >> "${CRONTAB_ROOT}"
