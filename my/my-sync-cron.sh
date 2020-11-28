@@ -13,4 +13,6 @@ then
 fi
 
 # add sync to crontab
+echo "add sync to crontab"
+
 echo "0 3 * * * /bin/sh /home/home-server-scripts/my/my-sync.sh" >> "${CRONTAB_ROOT}"
