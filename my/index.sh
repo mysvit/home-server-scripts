@@ -48,6 +48,9 @@ case $COMMAND in
   7)
     bash ./my/my-duckdns.sh
     ;;
+  8)
+    bash ./my/my-sync-cron.sh
+    ;;
   99)
     bash ./app/app-mc.sh
     bash ./app/app-ffmpeg.sh
