@@ -15,6 +15,10 @@ echo "
 
 6 Install Caddy
 
+7 Install Duck dns
+
+8 Add mirror by rsync to crontab
+
 99 Install Additional apps (mc, ffmpeg, mkvtoolnix)
 "
 
