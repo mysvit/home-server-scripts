@@ -12,7 +12,7 @@ read MOUNT_DEVICE
 MOUNT_ID=$(blkid $MOUNT_DEVICE | awk -F'"' '{print $2}')
 echo "Your USB ID is $MOUNT_ID"
 
-echo -n "Enter mount path [/mnt/usb for example] : "
+echo -n "Enter mount path [/media/hdd-8T-3 for example] : "
 read MOUNT_PATH
 [ -z $MOUNT_PATH ] && echo "Please provide mount path." && exit
 if [ ! -d $MOUNT_PATH ]
