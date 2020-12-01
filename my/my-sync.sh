@@ -7,4 +7,4 @@ echo ""
 echo "***********************************  sync  **********************************************"
 echo ""
 
-rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-2/ >> /var/log/mysvit-sync/sync.log
+rsync -arv /media/hdd-8T-1/ /media/hdd-8T-3/ >> /var/log/mysvit-sync/sync.log
