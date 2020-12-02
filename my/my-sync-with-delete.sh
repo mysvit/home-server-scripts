@@ -17,5 +17,5 @@ read YES_NO
 
 dt=$(date '+%d/%m/%Y %H:%M:%S');
 echo "$dt" >> /var/log/mysvit-sync/sync.log
-echo "rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/"
-rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/
+echo "rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/" >> /var/log/mysvit-sync/sync.log
+rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/ >> /var/log/mysvit-sync/sync.log
