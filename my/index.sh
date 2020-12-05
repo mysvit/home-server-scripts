@@ -18,7 +18,6 @@ echo "
 7 Install Duck dns
 
 8 Add mirror by rsync to crontab
-81 rsync with delete
 
 99 Install Additional apps (mc, ffmpeg, mkvtoolnix)
 "
@@ -55,9 +54,6 @@ case $COMMAND in
     ;;
   8)
     bash ./my/my-sync-cron.sh
-    ;;
-  81)
-    bash ./my/my-sync-with-delete.sh
     ;;
   99)
     bash ./app/app-mc.sh
