@@ -1,7 +1,7 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
-# make foledr if not exist
+# make folder if not exist
 if [ ! -d "${MYSVIT_BACKUP}/deluge" ]
 then
   mkdir "${MYSVIT_BACKUP}/deluge"
