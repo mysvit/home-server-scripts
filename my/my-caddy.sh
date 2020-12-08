@@ -11,18 +11,28 @@ echo ""
 
 caddy stop
 cat << EOF > /etc/caddy/Caddyfile
+
 #:80
-www.stmichaelmontreal.ca
-# Set this path to your site's directory.
-root * /mysvit/web/stmichael/www
-# Enable the static file server.
-file_server
-# Rewrites the request URI path
-try_files {path} /index.html
-# Enable log
-log {
-	output file /var/log/caddy/access.log
-	level DEBUG
+#:443
+[nds-name] {
+        root * [WEB_CONTENT_FOLDER]
+        file_server
+        try_files {path} /index.html
+
+        log {
+                output file [path_to_].access.log
+                level info
+        }
+
+}
+
+[nds-name] {
+        reverse_proxy 127.0.0.1:8096
+
+        log {
+                output file [path_to_].access.log
+                level info
+        }
 }
 EOF
 caddy start
