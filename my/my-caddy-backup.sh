@@ -13,4 +13,4 @@ then
   rm "${MYSVIT_BACKUP}/caddy/Caddyfile"
 fi
 
-zip -r1 "${MYSVIT_BACKUP}/caddy/Caddyfile" /etc/caddy/Caddyfile
+cp "${MYSVIT_BACKUP}/caddy/Caddyfile" /etc/caddy/Caddyfile
