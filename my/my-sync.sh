@@ -16,4 +16,5 @@ chown -R jellyfin:jellyfin /media/hdd-8T-3/
 chmod -R 755 /media/hdd-8T-1/
 chmod -R 755 /media/hdd-8T-3/
 
-rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/ >> "${MYSVIT_LOG}/sync.log"
+#rsync -arv --delete-before /media/hdd-8T-1/ /media/hdd-8T-3/ >> "${MYSVIT_LOG}/sync.log"
+rsync -arv /media/hdd-8T-1/ /media/hdd-8T-3/ >> "${MYSVIT_LOG}/sync.log"
