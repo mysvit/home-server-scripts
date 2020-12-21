@@ -1,4 +1,3 @@
-
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
