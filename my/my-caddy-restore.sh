@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/home-server-scripts/my/my-config.sh
+source ./my/my-config.sh
 
 if [ -f "${MYSVIT_BACKUP}/caddy/Caddyfile" ]
 then

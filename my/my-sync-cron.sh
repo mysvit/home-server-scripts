@@ -7,9 +7,9 @@ echo ""
 echo "***********************************  sync  **********************************************"
 echo ""
 
-if [ ! -d "/var/log/mysvit-sync" ]
+if [ ! -d ${MYSVIT_LOG} ]
 then
-  mkdir /var/log/mysvit-sync
+  mkdir ${MYSVIT_LOG}
 fi
 
 # add sync to crontab

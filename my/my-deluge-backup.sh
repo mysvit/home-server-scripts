@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/home-server-scripts/my/my-config.sh
+source ./my/my-config.sh
 
 # make folder if not exist
 if [ ! -d "${MYSVIT_BACKUP}/deluge" ]
