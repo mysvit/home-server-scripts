@@ -183,6 +183,7 @@ echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >
 \
 echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
 echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server-scripts; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
+echo "chmod -R 744 /home/home-server-scripts" >> /target/home/get-home-server-scripts.sh
 
 # power of
 d-i finish-install/reboot_in_progress note
