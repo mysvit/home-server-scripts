@@ -4,9 +4,14 @@ CRONTAB_DIR="/var/spool/cron/crontabs"
 CRONTAB_ROOT="/var/spool/cron/crontabs/root"
 
 # HDD 8TB
-USB_DEV_8T_1="/dev/sdc1"
+USB_DEV_8T_1="/dev/sdb1"
 USB_ID_8T_1="MEDIA"
 MOUNT_PATH_8T_1="/media/hdd-8T-1"
+
+# HDD 8TB MIRROR
+USB_DEV_8T_3="/dev/sdc1"
+USB_ID_8T_3="MEDIA"
+MOUNT_PATH_8T_3="/media/hdd-8T-3"
 
 # HDD 500GB
 #USB_DEV_500G_1="/dev/sdc2"
