@@ -28,4 +28,6 @@ mount $MOUNT_DEVICE $MOUNT_PATH
 
 echo "# [Description for your USB]  $MOUNT_DEVICE" >> $FSTAB
 echo "UUID=$MOUNT_ID $MOUNT_PATH auto nosuid,nodev,nofail 0 0" >> $FSTAB
+echo "UUID=$MOUNT_ID $MOUNT_PATH ext4 errors=remount-ro 0 1" >> $FSTAB
+
 nano $FSTAB

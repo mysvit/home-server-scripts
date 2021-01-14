@@ -4,8 +4,8 @@ apt update
 apt install -y ntfs-3g
 
 # HDD 8TB
-echo "# HDD USB 8TB $USB_DEV_8T_1" >> $FSTAB
-echo "UUID=$USB_ID_8T_1 $MOUNT_PATH_8T_1   ntfs-3g        defaults    0    0" >> $FSTAB
+#echo "# HDD USB 8TB $USB_DEV_8T_1" >> $FSTAB
+#echo "UUID=$USB_ID_8T_1 $MOUNT_PATH_8T_1   ntfs-3g        defaults    0    0" >> $FSTAB
 
 
 # HDD 500GB
