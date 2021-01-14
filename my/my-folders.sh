@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./my/my-config.sh
+source /home/home-server-scripts/my/my-config.sh
 
 apt update
 apt install -y zip
@@ -32,4 +32,3 @@ mkdir $MYSVIT_DELUGE_TORRENTS
 mkdir $MYSVIT_DELUGE_DOWNLOAD
 mkdir $MYSVIT_DELUGE_COMPLEATED
 mkdir $MYSVIT_WORK
-
