@@ -6,14 +6,16 @@ CRONTAB_ROOT="/var/spool/cron/crontabs/root"
 # HDD 8TB
 USB_DEV_8T_1="/dev/sdb1"
 MOUNT_PATH_8T_1="/media/hdd-8T-1"
+MOUNT_NAME_8T_1="/hdd-8T-1"
 
 # HDD 8TB
 USB_DEV_8T_3="/dev/sdc1"
 MOUNT_PATH_8T_3="/media/hdd-8T-3"
+MOUNT_NAME_8T_3="/hdd-8T-3"
 
 # HDD 16TB
 USB_DEV_16T_4="/dev/sdd1"
-MOUNT_PATH_8T_3="/media/hdd-8T-3"
+MOUNT_PATH_16T_4="/media/hdd-16T-4"
 
 # BACKUP
 PH_BACKUP="${MOUNT_PATH_8T_1}/backup"
