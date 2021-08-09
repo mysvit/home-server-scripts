@@ -9,7 +9,7 @@ CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 DIRNAME="$(dirname $0)"
 
 : "${DEBIAN_RELEASE:=buster}"
-: "${DEBIAN_VERSION:=10.4.0}"
+: "${DEBIAN_VERSION:=10.10.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"

@@ -3,7 +3,6 @@ f="/etc/hostname"
 echo "see /etc/hostname"
 clear
 
-echo $name
 currentHostName=$(cat "$f")
 echo "---=== Change hostname ===---"
 echo
