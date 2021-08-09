@@ -10,12 +10,9 @@ echo "
 
   use # parted              : command to create new partition
 
-  # parted /dev/YOUR DISK
-
-  (parted) mklabel gpt      : to set the partition table format to GPT
-  (parted) print free       : to see free space
-  (parted) mkpart primary 0GB 8002GB  : for 8TB
-  (parted) quit
+  parted /dev/YOUR DISK(SDA) mklabel gpt      : to set the partition table format to GPT
+  parted /dev/YOUR DISK(SDA) print free       : to see free space
+  parted -a optimal /dev/YOUR DISK(SDA) mkpart primary 0% 640GB     : optimal blocks 
 
   # fdisk -l              : to see your changes
 
