@@ -1,7 +1,5 @@
 #!/bin/bash
-source ./my/my-config.sh
-apt update
-apt install -y ntfs-3g
+
 
 # HDD 8TB
 #echo "# HDD USB 8TB $USB_DEV_8T_1" >> $FSTAB

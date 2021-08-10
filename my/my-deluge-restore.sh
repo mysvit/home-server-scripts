@@ -1,6 +1,16 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+# install deluge
+bash ./app/app-deluge.sh
+
+echo ""
+echo "***********************************  restore DELUGE from backup **************************************"
+echo ""
+
+echo "Wait 10s. and Press Enter"
+read
+
 chown -R deluge:deluge $MYSVIT_DELUGE
 find $MYSVIT_DELUGE -type d -exec chmod 755 {} \;
 
@@ -21,3 +31,12 @@ then
   systemctl status deluge-web -l --no-pager
 fi
 
+echo '0 2 * * * bash -c "source /home/home-server-scripts/my/my-config.sh; /home/home-server-scripts/my/my-deluge-backup.sh"' >> "${CRONTAB_ROOT}"
+
+
+echo ""
+echo "***********************************  restore DELUGE completed **********************************************"
+echo ""
+
+echo "Press Enter to continue..."
+read
