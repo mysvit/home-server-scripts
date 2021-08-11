@@ -21,3 +21,8 @@ find "${MOUNT_PATH_16T_4}" \( -type d -exec chmod 755 {} \; \) -o \( -type f -ex
 
 rsync -arv --delete-before "${MOUNT_PATH_8T_1}/" "${MOUNT_PATH_16T_4}${MOUNT_NAME_8T_1}/" >> "${MYSVIT_LOG}/sync.log"
 rsync -arv --delete-before "${MOUNT_PATH_8T_3}/" "${MOUNT_PATH_16T_4}${MOUNT_NAME_8T_3}/" >> "${MYSVIT_LOG}/sync.log"
+rsync -arv --delete-before "${MYSVIT}/web" "${MOUNT_PATH_16T_4}/web/" >> "${MYSVIT_LOG}/sync.log"
+rsync -arv --delete-before "${MYSVIT}/sync" "${MOUNT_PATH_16T_4}/sync/" >> "${MYSVIT_LOG}/sync.log"
+
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+echo "END $dt" >> "${MYSVIT_LOG}/sync.log"
