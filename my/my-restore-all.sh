@@ -1,7 +1,9 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
-#create folders structure
+# create map directory and mount hdd
+bash /home/home-server-scripts/my-mount.sh
+# create directory structure
 bash /home/home-server-scripts/my-folders.sh
 
 bash /home/home-server-scripts/my-duckdns-restore.sh

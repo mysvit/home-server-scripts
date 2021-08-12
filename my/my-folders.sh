@@ -37,7 +37,7 @@ ln -s $PH_MYSVIT_MY_VIDEO $MYSVIT_MY_VIDEO
 
 
 echo ""
-echo "*********************************** create folder structure COMPLEATED *********************************"
+echo "*********************************** create folder structure COMPLETED *********************************"
 echo ""
 
 echo "Press Enter to continue..."
