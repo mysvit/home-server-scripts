@@ -7,8 +7,8 @@ apt install -y dosfstools
 
 CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 DIRNAME="$(dirname $0)"
-
-: "${DEBIAN_RELEASE:=buster}"
+# change DEBIAN_RELEASE:=bullseye   and  DEBIAN_VERSION:=11.0.0
+: "${DEBIAN_RELEASE:=bullseye}"
 : "${DEBIAN_VERSION:=11.0.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
