@@ -7,6 +7,10 @@ echo ""
 echo "***********************************  sync  **********************************************"
 echo ""
 
+cp "${MOUNT_PATH_16T_4}/web/" "${MYSVIT_WEB}/"
+cp "${MOUNT_PATH_16T_4}/sync/" "${MYSVIT_SYNC}/"
+cp "${MOUNT_PATH_16T_4}/deluge_compl/" "${MYSVIT_DELUGE_COMPLEATED}/"
+
 if [ ! -d ${MYSVIT_LOG} ]
 then
   mkdir ${MYSVIT_LOG}

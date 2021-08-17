@@ -12,4 +12,4 @@ bash /home/home-server-scripts/my-caddy-restore.sh
 bash /home/home-server-scripts/my-deluge-restore.sh
 bash /home/home-server-scripts/my-jellyfin-restore.sh
 bash /home/home-server-scripts/my-samba-restore.sh
-bash /home/home-server-scripts/my-sync-cron.sh
+bash /home/home-server-scripts/my-sync-restore.sh

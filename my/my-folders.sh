@@ -20,6 +20,8 @@ mkdir $MYSVIT_DELUGE
 mkdir $MYSVIT_DELUGE_TORRENTS
 mkdir $MYSVIT_DELUGE_DOWNLOAD
 mkdir $MYSVIT_DELUGE_COMPLEATED
+mkdir $MYSVIT_WEB
+mkdir $MYSVIT_SYNC
 mkdir $MYSVIT_WORK
 
 #media movie
@@ -34,7 +36,6 @@ ln -s $PH_MYSVIT_MOVIES_SCI_FI $MYSVIT_MOVIES_SCI_FI
 ln -s $PH_MYSVIT_MY_PHOTO $MYSVIT_MY_PHOTO
 ln -s $PH_MYSVIT_MY_PRIVATE $MYSVIT_MY_PRIVATE
 ln -s $PH_MYSVIT_MY_VIDEO $MYSVIT_MY_VIDEO
-
 
 echo ""
 echo "*********************************** create folder structure COMPLETED *********************************"
