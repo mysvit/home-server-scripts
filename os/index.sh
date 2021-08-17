@@ -12,7 +12,7 @@ read COMMAND
 
 case $COMMAND in
   1)
-    bash ./os/os-create-debian-10-usb-key.sh
+    bash ./os/os-create-debian-11-usb-key.sh
     ;;
 
   *)
