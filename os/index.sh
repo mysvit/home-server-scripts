@@ -3,7 +3,7 @@ clear
 echo "
 0 Go back
 
-1 Create Debian Server 10 usb key with auto install
+1 Create Debian Server 11 usb key with auto install
 "
 
 echo -n "Enter number : "

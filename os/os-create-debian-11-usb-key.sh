@@ -9,7 +9,7 @@ CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 DIRNAME="$(dirname $0)"
 
 : "${DEBIAN_RELEASE:=buster}"
-: "${DEBIAN_VERSION:=10.10.0}"
+: "${DEBIAN_VERSION:=11.0.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
@@ -124,11 +124,14 @@ d-i passwd/user-password-again        password ${USER_PWD}
 # it is attached on /dev/sda and the USB flash drive on /dev/sdb
 # You can set manually partman-auto/disk and grub-installer/bootdev or
 # used the early_command option to automatically set the device to use.
-d-i partman/early_command string \
-    USBDEV=\$(mount | grep hd-media | cut -d" " -f1 | sed "s/\(.*\)./\1/");\
-    BOOTDEV=\$(list-devices disk | grep -v \$USBDEV | head -1);\
-    debconf-set partman-auto/disk \$BOOTDEV;\
-    debconf-set grub-installer/bootdev \$BOOTDEV;
+
+#d-i partman/early_command string \
+#    USBDEV=\$(mount | grep hd-media | cut -d" " -f1 | sed "s/\(.*\)./\1/");\
+#    BOOTDEV=\$(list-devices disk | grep -v \$USBDEV | head -1);\
+#    debconf-set partman-auto/disk \$BOOTDEV;\
+#    debconf-set grub-installer/bootdev \$BOOTDEV;
+d-i partman-auto/disk            string  /dev/sdb
+d-i grub-installer/bootdev       string  /dev/sdb
 d-i grub-installer/only_debian   boolean true
 d-i grub-installer/with_other_os boolean false
 
