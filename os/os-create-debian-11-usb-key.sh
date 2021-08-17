@@ -124,14 +124,11 @@ d-i passwd/user-password-again        password ${USER_PWD}
 # it is attached on /dev/sda and the USB flash drive on /dev/sdb
 # You can set manually partman-auto/disk and grub-installer/bootdev or
 # used the early_command option to automatically set the device to use.
-
-#d-i partman/early_command string \
-#    USBDEV=\$(mount | grep hd-media | cut -d" " -f1 | sed "s/\(.*\)./\1/");\
-#    BOOTDEV=\$(list-devices disk | grep -v \$USBDEV | head -1);\
-#    debconf-set partman-auto/disk \$BOOTDEV;\
-#    debconf-set grub-installer/bootdev \$BOOTDEV;
-d-i partman-auto/disk            string  /dev/sdb
-d-i grub-installer/bootdev       string  /dev/sdb
+d-i partman/early_command string \
+    USBDEV=\$(mount | grep hd-media | cut -d" " -f1 | sed "s/\(.*\)./\1/");\
+    BOOTDEV=\$(list-devices disk | grep -v \$USBDEV | head -1);\
+    debconf-set partman-auto/disk \$BOOTDEV;\
+    debconf-set grub-installer/bootdev \$BOOTDEV;
 d-i grub-installer/only_debian   boolean true
 d-i grub-installer/with_other_os boolean false
 
