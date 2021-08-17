@@ -13,3 +13,10 @@ echo "primary 4 bay HDD USB 16T  backup" >> $FSTAB
 echo "UUID=ba2c31ad-efce-4bb0-a75c-e5a61c248cbc ${MOUNT_PATH_16T_4} ext4   errors=remount-ro 0       1 " >> $FSTAB
 
 mount -a
+
+echo ""
+echo "***********************************  restore MOUNT completed **********************************************"
+echo ""
+
+echo "Press Enter to continue..."
+read

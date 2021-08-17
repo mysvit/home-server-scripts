@@ -9,7 +9,7 @@ echo ""
 echo "* * * * * /bin/sh /mysvit/web/duckdns.sh >/dev/null 2>&1" >> "${CRONTAB_ROOT}"
 
 echo ""
-echo "***********************************           done          *****************************************"
+echo "***********************************      duckdns added to crontab  *********************************"
 echo ""
 
 echo "Press Enter to continue..."
