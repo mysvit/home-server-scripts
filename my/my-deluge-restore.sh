@@ -2,7 +2,7 @@
 source /home/home-server-scripts/my/my-config.sh
 
 # install deluge
-bash ./app/app-deluge.sh
+bash /home/home-server-scripts/app/app-deluge.sh
 
 echo ""
 echo "***********************************  restore DELUGE from backup **************************************"

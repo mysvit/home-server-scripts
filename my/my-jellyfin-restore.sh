@@ -2,7 +2,7 @@
 source /home/home-server-scripts/my/my-config.sh
 
 # install deluge
-bash ./app/app-jellyfin.sh
+bash /home/home-server-scripts/app/app-jellyfin.sh
 
 echo ""
 echo "***********************************  restore JELLYFIN from backup **********************************************"
