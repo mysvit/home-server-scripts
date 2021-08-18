@@ -1,6 +1,9 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+#install all tools
+bash /home/home-server-scripts/app/app-mc.sh -y
+
 # create map directory and mount hdd
 bash /home/home-server-scripts/my/my-mount.sh
 # create directory structure

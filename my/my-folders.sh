@@ -12,7 +12,6 @@ echo ""
 mkdir $MYSVIT
 
 #backup
-rm $MYSVIT_BACKUP
 ln -s $PH_BACKUP $MYSVIT_BACKUP
 
 #deluge

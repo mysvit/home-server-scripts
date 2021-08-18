@@ -1,7 +1,7 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
-# sync
+apt install rsync -y
 
 echo ""
 echo "***********************************  sync  **********************************************"
