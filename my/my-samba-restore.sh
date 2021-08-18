@@ -1,7 +1,7 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
-bash ./app/app-samba.sh
+bash /home/home-server-scripts/app/app-samba.sh
 
 echo ""
 echo "***********************************  restore SAMBA from backup *****************************************"
@@ -24,6 +24,8 @@ echo '0 2 * * * bash -c "source /home/home-server-scripts/my/my-config.sh; /home
 echo ""
 echo "***********************************  restore SAMBA completed **********************************************"
 echo ""
+
+bash "${MYSVIT_BACKUP}/samba/samba_pwd.sh"
 
 echo "Press Enter to continue..."
 read
