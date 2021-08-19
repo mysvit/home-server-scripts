@@ -24,6 +24,7 @@ rsync -arv --delete-before "${MOUNT_PATH_8T_3}/" "${MOUNT_PATH_16T_4}${MOUNT_NAM
 rsync -arv --delete-before "${MYSVIT_WEB}/" "${MOUNT_PATH_16T_4}/web/" >> "${MYSVIT_LOG}/sync.log"
 rsync -arv --delete-before "${MYSVIT_SYNC}/" "${MOUNT_PATH_16T_4}/sync/" >> "${MYSVIT_LOG}/sync.log"
 rsync -arv --delete-before "${MYSVIT_DELUGE_COMPLEATED}/" "${MOUNT_PATH_16T_4}/deluge_compl/" >> "${MYSVIT_LOG}/sync.log"
+rsync -arv --delete-before "${MYSVIT_WORK}/" "${MOUNT_PATH_16T_4}/work/" >> "${MYSVIT_LOG}/sync.log"
 
 dt=$(date '+%d/%m/%Y %H:%M:%S');
 echo "END $dt" >> "${MYSVIT_LOG}/sync.log"

@@ -1,11 +1,12 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+#install miss packages
+bash /home/home-server-scripts/my/my-miss-packages.sh
 #install all tools
 bash /home/home-server-scripts/my/my-system-tune.sh
 bash /home/home-server-scripts/app/app-mc.sh
 bash /home/home-server-scripts/app/app-ffmpeg.sh
-
 # create map directory and mount hdd
 bash /home/home-server-scripts/my/my-mount.sh
 # create directory structure

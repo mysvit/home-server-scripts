@@ -155,15 +155,16 @@ tasksel tasksel/first multiselect standard
 d-i pkgsel/include    string      openssh-server
 d-i pkgsel/upgrade    select      none
 
-# Execution after installation
-# setup Network and sources list
-# Network for VirtualBox
-# echo "allow-hotplug enp0s3"     >> /target/etc/network/interfaces; \
-# echo "iface enp0s3 inet dhcp"   >> /target/etc/network/interfaces; \
-# echo "allow-hotplug enp0s8"     >> /target/etc/network/interfaces; \
-# echo "iface enp0s8 inet dhcp"   >> /target/etc/network/interfaces; \
+# run post install script
+d-i preseed/late_command string bash /preseed/late_command.sh
 
-d-i preseed/late_command string \
+# power of
+d-i finish-install/reboot_in_progress note
+d-i debian-installer/exit/poweroff boolean true
+EOF
+
+cat << EOF > ${MNT_USB}/preseed/late_command.sh
+#!/usr/bin/bash
 echo "allow-hotplug enp0s31f6"     >> /target/etc/network/interfaces; \
 echo "iface enp0s31f6 inet static" >> /target/etc/network/interfaces; \
 echo "address 192.168.1.10"        >> /target/etc/network/interfaces; \
@@ -185,9 +186,6 @@ echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >
 echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
 echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server-scripts; chmod -R 744 /home/home-server-scripts; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
 
-# power of
-d-i finish-install/reboot_in_progress note
-d-i debian-installer/exit/poweroff boolean true
 EOF
 
 sync
