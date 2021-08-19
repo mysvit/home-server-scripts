@@ -2,6 +2,7 @@
 source /home/home-server-scripts/my/my-config.sh
 
 #install all tools
+bash /home/home-server-scripts/my/my-system-tune.sh
 bash /home/home-server-scripts/app/app-mc.sh
 bash /home/home-server-scripts/app/app-ffmpeg.sh
 

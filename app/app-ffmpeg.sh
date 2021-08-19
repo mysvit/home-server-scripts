@@ -5,5 +5,7 @@ apt update
 echo "******************************************************************************"
 echo "FFMPEG & MKVTOOLNIX"
 echo "******************************************************************************"
+echo "*** ffmpeg ***"
 apt install ffmpeg -y
+echo "*** mkvtoolnix ***"
 apt install mkvtoolnix -y

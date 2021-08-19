@@ -15,6 +15,9 @@ if [ -f "${MYSVIT_BACKUP}/jellyfin/var-lib-jellyfin.zip" ] && [ -f "${MYSVIT_BAC
 then
   systemctl stop jellyfin
 
+  chown -R jellyfin:jellyfin ${MYSVIT_MEDIA}
+  find "${MYSVIT_MEDIA}" \( -type d -exec chmod 755 {} \; \) -o \( -type f -exec chmod 644 {} \; \)
+
   chown -R jellyfin:jellyfin "${MYSVIT_BACKUP}/jellyfin/*"
   find "${MYSVIT_BACKUP}/jellyfin" -type d -exec chmod 755 {} \;
   find "${MYSVIT_BACKUP}/jellyfin" -type f -exec chmod 644 {} \;
