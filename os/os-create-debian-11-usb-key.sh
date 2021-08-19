@@ -163,7 +163,7 @@ d-i debian-installer/exit/poweroff boolean true
 EOF
 
 #copy script for late command
-cp /home/home-server-scripts/os/late_command.sh ${MNT_USB}/preseed/debian.preseed
+cp /home/home-server-scripts/os/late_command.sh ${MNT_USB}/preseed/
 
 sync
 umount ${MNT_USB}
