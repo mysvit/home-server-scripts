@@ -155,7 +155,7 @@ d-i pkgsel/include    string      openssh-server
 d-i pkgsel/upgrade    select      none
 
 # run post install script
-d-i preseed/late_command string bash /preseed/late_command.sh
+d-i preseed/late_command string /preseed/late_command.sh
 
 # power of
 d-i finish-install/reboot_in_progress note
@@ -164,6 +164,7 @@ EOF
 
 #copy script for late command
 cp /home/home-server-scripts/os/late_command.sh ${MNT_USB}/preseed/
+chmod $+x ${MNT_USB}/preseed/late_command.sh
 
 sync
 umount ${MNT_USB}
