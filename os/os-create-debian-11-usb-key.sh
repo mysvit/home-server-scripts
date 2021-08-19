@@ -164,14 +164,14 @@ d-i pkgsel/upgrade    select      none
 # echo "iface enp0s8 inet dhcp"   >> /target/etc/network/interfaces; \
 
 d-i preseed/late_command string \
-echo "allow-hotplug enp1s0"       >> /target/etc/network/interfaces; \
-echo "iface enp1s0 inet static"   >> /target/etc/network/interfaces; \
-echo "address 192.168.1.10"       >> /target/etc/network/interfaces; \
-echo "netmask 255.255.255.0"      >> /target/etc/network/interfaces; \
-echo "gateway 192.168.1.1"        >> /target/etc/network/interfaces; \
+echo "allow-hotplug enp0s31f6"     >> /target/etc/network/interfaces; \
+echo "iface enp0s31f6 inet static" >> /target/etc/network/interfaces; \
+echo "address 192.168.1.10"        >> /target/etc/network/interfaces; \
+echo "netmask 255.255.255.0"       >> /target/etc/network/interfaces; \
+echo "gateway 192.168.1.1"         >> /target/etc/network/interfaces; \
 \
 echo "nameserver 192.168.1.1"  > /target/etc/resolv.conf; \
-echo "nameserver 8.8.8.8"  >> /target/etc/resolv.conf; \
+echo "nameserver 8.8.8.8"     >> /target/etc/resolv.conf; \
 \
 echo "media"  > /target/etc/hostname; \
 \
