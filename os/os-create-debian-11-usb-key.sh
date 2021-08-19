@@ -12,7 +12,8 @@ DIRNAME="$(dirname $0)"
 : "${DEBIAN_VERSION:=11.0.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
-: "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
+: "${REMOTE_ISO:=https://cdimage.debian.org/d
+ebian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
 MNT_USB="/mnt/usb_key_${DEBIAN_RELEASE}"
 
@@ -181,15 +182,8 @@ echo "deb-src http://security.debian.org/debian-security buster/updates main"  >
 echo "deb http://deb.debian.org/debian/ buster-updates main"                   >> /target/etc/apt/sources.list; \
 echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >> /target/etc/apt/sources.list; \
 \
-echo "
-#!/usr/bin/bash
-apt update
-apt install -y git
-git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts
-cd /home/home-server-scripts;
-chmod -R 744 /home/home-server-scripts
-bash index.sh;
-" | tee /target/home/get-home-server-scripts.sh
+echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
+echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server-scripts; chmod -R 744 /home/home-server-scripts; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
 
 # power of
 d-i finish-install/reboot_in_progress note
