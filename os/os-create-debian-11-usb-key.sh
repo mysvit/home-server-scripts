@@ -163,30 +163,8 @@ d-i finish-install/reboot_in_progress note
 d-i debian-installer/exit/poweroff boolean true
 EOF
 
-cat << EOF > ${MNT_USB}/preseed/late_command.sh
-#!/usr/bin/bash
-echo "allow-hotplug enp0s31f6"     >> /target/etc/network/interfaces; \
-echo "iface enp0s31f6 inet static" >> /target/etc/network/interfaces; \
-echo "address 192.168.1.10"        >> /target/etc/network/interfaces; \
-echo "netmask 255.255.255.0"       >> /target/etc/network/interfaces; \
-echo "gateway 192.168.1.1"         >> /target/etc/network/interfaces; \
-\
-echo "nameserver 192.168.1.1"  > /target/etc/resolv.conf; \
-echo "nameserver 8.8.8.8"      >> /target/etc/resolv.conf; \
-\
-echo "media"  > /target/etc/hostname; \
-\
-echo "deb http://deb.debian.org/debian/ buster main"                            > /target/etc/apt/sources.list; \
-echo "deb-src http://deb.debian.org/debian/ buster main"                       >> /target/etc/apt/sources.list; \
-echo "deb http://security.debian.org/debian-security buster/updates main"      >> /target/etc/apt/sources.list; \
-echo "deb-src http://security.debian.org/debian-security buster/updates main"  >> /target/etc/apt/sources.list; \
-echo "deb http://deb.debian.org/debian/ buster-updates main"                   >> /target/etc/apt/sources.list; \
-echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >> /target/etc/apt/sources.list; \
-\
-echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
-echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server-scripts; chmod -R 744 /home/home-server-scripts; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
-
-EOF
+#copy script for late command
+cp /home/home-server-scripts/os/late_command.sh ${MNT_USB}/preseed/debian.preseed
 
 sync
 umount ${MNT_USB}
