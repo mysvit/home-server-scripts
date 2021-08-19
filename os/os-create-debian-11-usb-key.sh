@@ -12,8 +12,7 @@ DIRNAME="$(dirname $0)"
 : "${DEBIAN_VERSION:=11.0.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
-: "${REMOTE_ISO:=https://cdimage.debian.org/d
-ebian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
+: "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
 ISO_NAME="${REMOTE_ISO##*/}"
 MNT_USB="/mnt/usb_key_${DEBIAN_RELEASE}"
 
