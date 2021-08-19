@@ -107,7 +107,7 @@ d-i clock-setup/ntp                   boolean  true
 # network
 d-i hw-detect/load_firmware           boolean false
 d-i netcfg/enable                     boolean false
-# d-i netcfg/hostname                   string  media
+# d-i netcfg/hostname                 string  media
 
 # user 
 d-i passwd/root-password              password ${ROOT_PWD}
@@ -171,7 +171,7 @@ echo "netmask 255.255.255.0"       >> /target/etc/network/interfaces; \
 echo "gateway 192.168.1.1"         >> /target/etc/network/interfaces; \
 \
 echo "nameserver 192.168.1.1"  > /target/etc/resolv.conf; \
-echo "nameserver 8.8.8.8"     >> /target/etc/resolv.conf; \
+echo "nameserver 8.8.8.8"      >> /target/etc/resolv.conf; \
 \
 echo "media"  > /target/etc/hostname; \
 \
@@ -182,9 +182,15 @@ echo "deb-src http://security.debian.org/debian-security buster/updates main"  >
 echo "deb http://deb.debian.org/debian/ buster-updates main"                   >> /target/etc/apt/sources.list; \
 echo "deb-src http://deb.debian.org/debian/ buster-updates main"               >> /target/etc/apt/sources.list; \
 \
-echo "#!/usr/bin/bash" > /target/home/get-home-server-scripts.sh; \
-echo "apt update; apt install -y git; git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts; cd /home/home-server-scripts; bash index.sh;"  >> /target/home/get-home-server-scripts.sh
-echo "chmod -R 744 /home/home-server-scripts" >> /target/home/get-home-server-scripts.sh
+echo "
+#!/usr/bin/bash
+apt update
+apt install -y git
+git clone https://github.com/mysvit/home-server-scripts /home/home-server-scripts
+cd /home/home-server-scripts;
+chmod -R 744 /home/home-server-scripts
+bash index.sh;
+" | tee /target/home/get-home-server-scripts.sh
 
 # power of
 d-i finish-install/reboot_in_progress note
