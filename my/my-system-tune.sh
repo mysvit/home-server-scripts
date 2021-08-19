@@ -2,6 +2,13 @@
 source /home/home-server-scripts/my/my-config.sh
 
 echo ""
+echo "***********************************   disable ipv6      ***************************************"
+echo ""
+
+echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/70-disable-ipv6.conf
+sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
+
+echo ""
 echo "***********************************   disable bluetooth ***************************************"
 
 echo "# disable bluetooth module to check run #lsmod
@@ -32,26 +39,14 @@ blacklist realtek
 blacklist libphy
 " | tee /etc/modprobe.d/realtek.conf
 
-echo ""
-echo "***********************************   disable realtek   ***************************************"
-echo ""
-
-echo "# disable SD/MMS card reader module to check run #lsmod
-blacklist sd_mod
-" | tee /etc/modprobe.d/sd_mmc.conf
-
-echo ""
-echo "***********************************   disable ipv6      ***************************************"
-echo ""
-
-echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.d/70-disable-ipv6.conf
-sysctl -p -f /etc/sysctl.d/70-disable-ipv6.conf
-
-echo ""
-echo "***********************************   clear cache      ***************************************"
-echo ""
-
 update-initramfs -u
+
+echo ""
+echo "***********************************   add to grub PCI   ***************************************"
+echo ""
+
+sed  -i 's/"quiet"/"quiet splash pci=noaer"/' /etc/default/grub
+update-grub
 
 echo "Press Enter to continue..."
 read
