@@ -164,7 +164,6 @@ EOF
 
 #copy script for late command
 cp /home/home-server-scripts/os/late_command.sh ${MNT_USB}/preseed/
-chmod $+x ${MNT_USB}/preseed/late_command.sh
 
 sync
 umount ${MNT_USB}
