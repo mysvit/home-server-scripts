@@ -155,7 +155,7 @@ d-i pkgsel/include    string      openssh-server
 d-i pkgsel/upgrade    select      none
 
 # run post install script
-d-i preseed/late_command string /preseed/late_command.sh
+d-i preseed/late_command string sh /hd-media/preseed/late_command.sh
 
 # power of
 d-i finish-install/reboot_in_progress note

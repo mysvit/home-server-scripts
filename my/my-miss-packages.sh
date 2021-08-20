@@ -38,8 +38,6 @@ dpkg -i libpcre2-16-0_10.36-2_amd64.deb
 wget http://ftp.ca.debian.org/debian/pool/main/q/qtbase-opensource-src/libqt5core5a_5.15.2+dfsg-9_amd64.deb
 dpkg -i libqt5core5a_5.15.2+dfsg-9_amd64.deb
 
-
-
 echo " MKVTOOLNIX "
 
 echo "Press Enter to continue..."
