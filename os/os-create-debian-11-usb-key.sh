@@ -8,6 +8,7 @@ apt install -y dosfstools
 CURRENT_DATE=$(date +%Y-%m-%d_%H:%M)
 DIRNAME="$(dirname $0)"
 # change DEBIAN_RELEASE:=bullseye   and  DEBIAN_VERSION:=11.0.0
+# don't forget change in late_command.sh for sources.list
 : "${DEBIAN_RELEASE:=bullseye}"
 : "${DEBIAN_VERSION:=11.0.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
