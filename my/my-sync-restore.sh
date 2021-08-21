@@ -24,8 +24,9 @@ fi
 # add sync to crontab
 echo "add sync to crontab"
 
-echo "0 3 * * * bash -c 'source /home/home-server-scripts/my/my-config.sh; /home/home-server-scripts/my/my-sync.sh'" >> "${CRONTAB_ROOT}"
-echo '0 1 * * * bash -c "chmod -R 744 /home/home-server-scripts"' >> "${CRONTAB_ROOT}"
+echo "#!/bin/sh
+/home/home-server-scripts/my/my-sync.sh" > /etc/cron.daily/my-sync.sh
+chmod 755 /etc/cron.daily/my-sync.sh
 
 echo ""
 echo "***********************************  rsync restore completed **********************************************"

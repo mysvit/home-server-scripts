@@ -5,8 +5,13 @@ echo ""
 echo "***********************************   add duck dns to crontab ***************************************"
 echo ""
 
+# add sync to crontab
+echo "add sync to crontab"
+
 # install duck dns to crontab
-echo "* * * * * /bin/sh /mysvit/web/duckdns.sh >/dev/null 2>&1" >> "${CRONTAB_ROOT}"
+echo "#!/bin/sh
+/mysvit/web/duckdns.sh >/dev/null 2>&1" > /etc/cron.hourly/my-duckdns.sh
+chmod 755 /etc/cron.hourly/my-duckdns.sh
 
 echo ""
 echo "***********************************      duckdns added to crontab  *********************************"

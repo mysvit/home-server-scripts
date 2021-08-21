@@ -1,7 +1,5 @@
 #!/bin/bash
 FSTAB="/etc/fstab"
-CRONTAB_DIR="/var/spool/cron/crontabs"
-CRONTAB_ROOT="/var/spool/cron/crontabs/root"
 
 # HDD 8TB
 MOUNT_PATH_8T_1="/media/hdd-8T-1"

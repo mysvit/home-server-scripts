@@ -31,8 +31,12 @@ then
   systemctl status deluge-web -l --no-pager
 fi
 
-echo '0 2 * * * bash -c "source /home/home-server-scripts/my/my-config.sh; /home/home-server-scripts/my/my-deluge-backup.sh"' >> "${CRONTAB_ROOT}"
+# add sync to crontab
+echo "add sync to crontab"
 
+echo "#!/bin/sh
+/home/home-server-scripts/my/my-deluge-backup.sh" > /etc/cron.daily/my-deluge-backup.sh
+chmod 755 /etc/cron.daily/my-deluge-backup.sh
 
 echo ""
 echo "***********************************  restore DELUGE completed **********************************************"

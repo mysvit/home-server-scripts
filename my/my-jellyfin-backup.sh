@@ -1,6 +1,9 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+echo "$dt my-jellyfin-backup.sh" >> "${MYSVIT_LOG}/sync.log"
+
 systemctl stop jellyfin
 
 # make folder if not exist

@@ -1,6 +1,9 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+echo "$dt my-samba-backup.sh" >> "${MYSVIT_LOG}/sync.log"
+
 # make foledr if not exist
 if [ ! -d "${MYSVIT_BACKUP}/samba" ]
 then

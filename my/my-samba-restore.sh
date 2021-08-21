@@ -19,7 +19,12 @@ then
   systemctl start smbd
 fi
 
-echo '0 2 * * * bash -c "source /home/home-server-scripts/my/my-config.sh; /home/home-server-scripts/my/my-samba-backup.sh"' >> "${CRONTAB_ROOT}"
+# add sync to crontab
+echo "add sync to crontab"
+
+echo "#!/bin/sh
+/home/home-server-scripts/my/my-samba-backup.sh" > /etc/cron.daily/my-samba-backup.sh
+chmod 755 /etc/cron.daily/my-samba-backup.sh
 
 echo ""
 echo "***********************************  restore SAMBA completed **********************************************"

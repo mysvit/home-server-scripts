@@ -1,6 +1,9 @@
 #!/bin/bash
 source /home/home-server-scripts/my/my-config.sh
 
+dt=$(date '+%d/%m/%Y %H:%M:%S');
+echo "$dt my-caddy-backup.sh" >> "${MYSVIT_LOG}/sync.log"
+
 # make folder if not exist
 if [ ! -d "${MYSVIT_BACKUP}/caddy" ]
 then
