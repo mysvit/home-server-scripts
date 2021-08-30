@@ -20,8 +20,8 @@ fi
 echo "add sync to crontab"
 
 echo "#!/bin/sh
-/home/home-server-scripts/my/my-caddy-backup.sh" > /etc/cron.daily/my-caddy-backup.sh
-chmod 755 /etc/cron.daily/my-caddy-backup.sh
+/home/home-server-scripts/my/my-caddy-backup.sh" > /etc/cron.daily/my-caddy-backup
+chmod 755 /etc/cron.daily/my-caddy-backup
 
 echo ""
 echo "***********************************  restore CADDY completed *******************************************"

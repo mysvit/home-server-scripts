@@ -35,8 +35,8 @@ fi
 echo "add sync to crontab"
 
 echo "#!/bin/sh
-/home/home-server-scripts/my/my-deluge-backup.sh" > /etc/cron.daily/my-deluge-backup.sh
-chmod 755 /etc/cron.daily/my-deluge-backup.sh
+/home/home-server-scripts/my/my-deluge-backup.sh" > /etc/cron.daily/my-deluge-backup
+chmod 755 /etc/cron.daily/my-deluge-backup
 
 echo ""
 echo "***********************************  restore DELUGE completed **********************************************"

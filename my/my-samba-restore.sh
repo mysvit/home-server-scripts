@@ -23,8 +23,8 @@ fi
 echo "add sync to crontab"
 
 echo "#!/bin/sh
-/home/home-server-scripts/my/my-samba-backup.sh" > /etc/cron.daily/my-samba-backup.sh
-chmod 755 /etc/cron.daily/my-samba-backup.sh
+/home/home-server-scripts/my/my-samba-backup.sh" > /etc/cron.daily/my-samba-backup
+chmod 755 /etc/cron.daily/my-samba-backup
 
 echo ""
 echo "***********************************  restore SAMBA completed **********************************************"
