@@ -31,6 +31,15 @@ echo "***********************************  restore SAMBA completed *************
 echo ""
 
 bash "${MYSVIT_BACKUP}/samba/samba_pwd.sh"
+echo "Set samba password for user for folder media. Enter User Name: "
+read SAMBA_MEDIA_USER
+smbpasswd -a $SAMBA_MEDIA_USER
+
+echo -n "Add work user. Enter USER NAME: "
+read SAMBA_WORK_USER
+useradd -r -s /bin/false $SAMBA_WORK_USER
+smbpasswd -a $SAMBA_WORK_USER
+
 
 echo "Press Enter to continue..."
 read
