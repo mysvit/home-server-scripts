@@ -30,19 +30,20 @@ systemctl start deluged
 
 
 deluge_web_service="/etc/systemd/system/deluge-web.service"
-echo "[Unit]
+echo "
+[Unit]
 Description=Deluge Bittorrent Client Web Interface
-After=network-online.target
+Documentation=man:deluge-web
+After=network-online.target deluged.service
+Wants=deluged.service
 [Service]
 Type=simple
-User=deluge
-Group=deluge
 UMask=027
-ExecStart=/usr/bin/deluge-web
+ExecStart=/usr/bin/deluge-web -d
 Restart=on-failure
-TimeoutStopSec=2000
 [Install]
-WantedBy=multi-user.target" > $deluge_web_service
+WantedBy=multi-user.target
+" > $deluge_web_service
 
 systemctl enable deluge-web
 systemctl start deluge-web
