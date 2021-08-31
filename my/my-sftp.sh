@@ -13,13 +13,12 @@ groupadd sftp_users
 useradd -m -G sftp_users sftp_user
 echo "sftp_user:myPass" | chpasswd
 
-cat << EOF >> /etc/ssh/sshd_config
+cat << EOF >> /etc/ssh/sshd_config.d/sftp_access.conf
 Match Group sftp_users
 ChrootDirectory /sftp_folder
 X11Forwarding no
 AllowTcpForwarding no
 ForceCommand internal-sftp
 EOF
-nano /etc/ssh/sshd_config
 
 systemctl restart sshd
