@@ -6,6 +6,9 @@ echo "$dt my-jellyfin-backup.sh" >> "${MYSVIT_LOG}/jellyfin-backup.log"
 
 systemctl stop jellyfin
 
+# clear temp dir
+rm -r /var/lib/jellyfin/transcoding-temp/transcodes/
+
 # make folder if not exist
 if [ ! -d "${MYSVIT_BACKUP}/jellyfin" ]
 then
