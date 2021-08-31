@@ -1,5 +1,5 @@
 #!/bin/bash
-source ./my/my-config.sh
+source /home/home-server-scripts/my/my-config.sh
 
 # install sftp
 
