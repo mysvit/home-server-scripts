@@ -1,4 +1,4 @@
-# Home media server zero configuration scripts Debian Server 11
+# Home media server scripts (JELLYFIN, DELUGE, SAMBA etc.) base on Debian Server 11
 
 1. My Scripts (mount usb, make work forlders) - you should modify files from that folder for yourself
    * 1 BACKUP ALL
