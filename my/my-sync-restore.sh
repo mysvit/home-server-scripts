@@ -12,10 +12,6 @@ rsync -arv "${MOUNT_PATH_16T_4}/sync/" "${MYSVIT_SYNC}/"
 rsync -arv "${MOUNT_PATH_16T_4}/deluge_compl/" "${MYSVIT_DELUGE_COMPLEATED}/"
 rsync -arv "${MOUNT_PATH_16T_4}/work/" "${MYSVIT_WORK}/"
 
-chown -R jellyfin:jellyfin ${MYSVIT_SYNC}
-find "${MYSVIT_MEDIA}" \( -type d -exec chmod 755 {} \; \) -o \( -type f -exec chmod 644 {} \; \)
-
-
 if [ ! -d ${MYSVIT_LOG} ]
 then
   mkdir ${MYSVIT_LOG}
