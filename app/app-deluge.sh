@@ -7,7 +7,7 @@
 # default password = deluge
 # change password, download folder and compleader folder
 
-apt install deluged deluge-webui -y
+apt install deluged deluge-web -y
 adduser --system --group deluge
 
 deluged_service="/etc/systemd/system/deluged.service"
