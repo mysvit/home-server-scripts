@@ -17,5 +17,5 @@ bash /home/home-server-scripts/my/my-caddy-restore.sh
 bash /home/home-server-scripts/my/my-deluge-restore.sh
 bash /home/home-server-scripts/my/my-jellyfin-restore.sh
 bash /home/home-server-scripts/my/my-samba-restore.sh
-
+bash /home/home-server-scripts/my/my-sftp.sh
 service cron reload
