@@ -10,8 +10,8 @@ echo "add sync to crontab"
 
 # install duck dns to crontab
 echo "#!/bin/sh
-/mysvit/web/duckdns.sh >/dev/null 2>&1" > /etc/cron.hourly/my-duckdns.sh
-chmod 755 /etc/cron.hourly/my-duckdns.sh
+/mysvit/web/duckdns.sh >/dev/null 2>&1" > /etc/cron.hourly/my-duckdns
+chmod 755 /etc/cron.hourly/my-duckdns
 
 echo ""
 echo "***********************************      duckdns added to crontab  *********************************"
