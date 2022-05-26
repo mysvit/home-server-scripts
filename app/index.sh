@@ -6,6 +6,7 @@ echo "
 1  - Install JELLYFIN - media server - server_ip:8096
 2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
 3  - Install SAMBA - windows file share
+4  - Install DOCKER
 
 91 - mc : Midnight commander - file manager
 92 - ffmpeg & mkvtoolnix : video tools
@@ -38,6 +39,10 @@ case $COMMAND in
     ;;
   300)
     bash ./app/app-samba-remove.sh
+    ;;
+
+  4)
+    bash ./app/app-docker.sh
     ;;
 
   91)

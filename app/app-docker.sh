@@ -1,15 +1,11 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+  bullseye stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 apt update
-apt install -y  apt-transport-https ca-certificates curl gnupg2 software-properties-common
-curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
-apt update
-
-apt install -y docker-ce docker-ce-cli containerd.io
-docker run hello-world
-
-# The message will appear
-# Hello from Docker!
-# ...
- 
+apt install containerd.io docker-ce-cli docker-ce docker-compose-plugin

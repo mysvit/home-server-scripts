@@ -22,6 +22,7 @@
    * 1  - Install JELLYFIN - media server - server_ip:8096
    * 2  - Install DELUGE - torrent client with web ui - server_ip:8112 (default password: deluge)
    * 3  - Install SAMBA - windows file share
+   * 4  - Install DOCKER
    * 91 - mc : Midnight commander - file manager
    * 92 - ffmpeg & mkvtoolnix : video tools
    * 93 - caddy: platform for server app with https
