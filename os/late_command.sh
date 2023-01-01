@@ -3,13 +3,13 @@
 echo "
 allow-hotplug enp0s31f6
 iface enp0s31f6 inet static
-address 192.168.1.10
+address 192.168.0.10
 netmask 255.255.255.0
-gateway 192.168.1.1
+gateway 192.168.0.1
 " > /target/etc/network/interfaces.d/intel.conf
 
 echo "
-nameserver 192.168.1.1
+nameserver 192.168.0.1
 nameserver 8.8.8.8
 " > /target/etc/resolv.conf
 

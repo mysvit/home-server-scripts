@@ -10,7 +10,7 @@ DIRNAME="$(dirname $0)"
 # change DEBIAN_RELEASE:=bullseye   and  DEBIAN_VERSION:=11.0.0
 # don't forget change in late_command.sh for sources.list
 : "${DEBIAN_RELEASE:=bullseye}"
-: "${DEBIAN_VERSION:=11.0.0}"
+: "${DEBIAN_VERSION:=11.6.0}"
 : "${DEBIAN_MIRROR:=http://ftp.debian.org}"
 : "${ARCH:=amd64}"
 : "${REMOTE_ISO:=https://cdimage.debian.org/debian-cd/current/${ARCH}/iso-cd/debian-${DEBIAN_VERSION}-${ARCH}-netinst.iso}"
