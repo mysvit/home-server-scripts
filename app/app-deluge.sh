@@ -36,8 +36,8 @@ Documentation=man:deluge-web
 After=network-online.target deluged.service
 Wants=deluged.service
 [Service]
-Type=simple
-UMask=027
+User=deluge
+Group=deluge
 ExecStart=/usr/bin/deluge-web -d
 Restart=on-failure
 [Install]
